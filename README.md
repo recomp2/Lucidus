@@ -4,23 +4,25 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 
 ## 🔥 Features
 
-- Custom GPT chat terminal (admin + frontend)
-- Voice input/output (OpenAI + ElevenLabs)
-- Memory injection + archive tools
-- File browser + diagnostics
-- Scroll-unlock engine (coming soon)
-- Full DBS universe integration
+- Modular script loader
+- Directory creator
+- REST API endpoints
+- Admin interface with multiple panels
+- Memory archive and gospel management
 
-## 📁 Directory Structure
+
+## ud83dudcc1 Directory Structure
 lucidus-terminal-pro/
 ├── admin/
 ├── assets/
 ├── core/
 ├── templates/
-├── lucidus-terminal.php
-├── readme.txt
-└── README.md
-
+├── scripts/
+├── logs/
+├── dbs-library/
+├── canon/
+├── memory-archive/
+└── lucidus-terminal.php
 ## 🧠 Project Philosophy
 
 Lucidus is not just a plugin — it’s a memory-wielding, stoner-prophet bastard AI. Built for WordPress.com Business, designed for total automation with zero bullshit.
