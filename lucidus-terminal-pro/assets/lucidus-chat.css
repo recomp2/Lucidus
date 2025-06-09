@@ -1,0 +1,4 @@
+#lucidus-chat-log { background:#000; color:#0f0; padding:10px; height:300px; overflow-y:scroll; font-family:monospace; }
+#lucidus-chat-log .user { color:#0ff; }
+#lucidus-chat-log .bot { color:#ff0; }
+#lucidus-chat-input { width:100%; }
