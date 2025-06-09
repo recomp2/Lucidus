@@ -19,4 +19,14 @@ if ( ! defined( 'LUCIDUS_PRO_URL' ) ) {
     define( 'LUCIDUS_PRO_URL', plugin_dir_url( __FILE__ ) );
 }
 
+if ( ! defined( 'LUCIDUS_PRO_VERSION' ) ) {
+    define( 'LUCIDUS_PRO_VERSION', '1.0.0' );
+}
+
+register_activation_hook( __FILE__, 'lucidus_pro_activate' );
+function lucidus_pro_activate() {
+    add_option( 'lucidus_openai_key', '' );
+    add_option( 'lucidus_elevenlabs_key', '' );
+}
+
 require_once LUCIDUS_PRO_PATH . 'core/lucidus-terminal-core.php';

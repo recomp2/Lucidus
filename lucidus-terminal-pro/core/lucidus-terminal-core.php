@@ -66,3 +66,43 @@ function lucidus_render_scripts_page() {
 function lucidus_render_settings_page() {
     include LUCIDUS_PRO_PATH . 'admin/templates/settings.php';
 }
+
+/**
+ * Handle settings form submission.
+ */
+function lucidus_handle_settings_save() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'Unauthorized user' );
+    }
+
+    check_admin_referer( 'lucidus_save_settings' );
+
+    $openai_key   = isset( $_POST['lucidus_openai_key'] ) ? sanitize_text_field( $_POST['lucidus_openai_key'] ) : '';
+    $eleven_key   = isset( $_POST['lucidus_elevenlabs_key'] ) ? sanitize_text_field( $_POST['lucidus_elevenlabs_key'] ) : '';
+
+    update_option( 'lucidus_openai_key', $openai_key );
+    update_option( 'lucidus_elevenlabs_key', $eleven_key );
+
+    wp_redirect( add_query_arg( 'updated', 'true', admin_url( 'admin.php?page=lucidus-terminal-settings' ) ) );
+    exit;
+}
+add_action( 'admin_post_lucidus_save_settings', 'lucidus_handle_settings_save' );
+
+/**
+ * Handle script execution form submission.
+ */
+function lucidus_handle_run_script() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'Unauthorized user' );
+    }
+
+    check_admin_referer( 'lucidus_run_script' );
+
+    $command = isset( $_POST['lucidus_script_command'] ) ? sanitize_text_field( $_POST['lucidus_script_command'] ) : '';
+
+    set_transient( 'lucidus_last_command', $command, MINUTE_IN_SECONDS );
+
+    wp_redirect( add_query_arg( 'command', urlencode( $command ), admin_url( 'admin.php?page=lucidus-terminal-scripts' ) ) );
+    exit;
+}
+add_action( 'admin_post_lucidus_run_script', 'lucidus_handle_run_script' );
