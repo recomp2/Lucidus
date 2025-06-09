@@ -2,7 +2,7 @@
 /*
 Plugin Name: Lucidus Terminal Pro
 Description: Mythological OS plugin for WordPress.
-Version: 0.1.0
+Version: 0.1.1
 Author: Dr.G and Lucidus Bastardo
 */
 
@@ -20,6 +20,10 @@ function lucidus_terminal_pro_init_dirs() {
         __DIR__ . '/dbs-library',
         __DIR__ . '/memory-archive/profiles',
         __DIR__ . '/canon',
+        __DIR__ . '/assets',
+        __DIR__ . '/core',
+        __DIR__ . '/templates',
+        __DIR__ . '/scripts',
     );
     foreach ($dirs as $dir) {
         if (!file_exists($dir)) {
@@ -28,6 +32,9 @@ function lucidus_terminal_pro_init_dirs() {
     }
     if (!file_exists(__DIR__ . '/logs/script-executions.log')) {
         file_put_contents(__DIR__ . '/logs/script-executions.log', "");
+    }
+    if (!file_exists(__DIR__ . '/logs/upload-log.json')) {
+        file_put_contents(__DIR__ . '/logs/upload-log.json', '[]');
     }
 }
 register_activation_hook(__FILE__, 'lucidus_terminal_pro_init_dirs');

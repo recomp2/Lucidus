@@ -8,6 +8,10 @@ if (isset($_POST['voice'])) {
     echo '<div class="updated"><p>Voice updated.</p></div>';
 }
 $voices = array('OpenAI', 'ElevenLabs');
+$test_output = '';
+if (isset($_POST['test_phrase'])) {
+    $test_output = 'Lucidus is online (' . $config['voice'] . ' voice simulated)';
+}
 ?>
 <div class="wrap">
     <h1>Voice Settings</h1>
@@ -18,5 +22,9 @@ $voices = array('OpenAI', 'ElevenLabs');
             <?php endforeach; ?>
         </select>
         <?php submit_button('Save'); ?>
+        <?php submit_button('Test phrase', 'secondary', 'test_phrase', false); ?>
     </form>
-</div>
+    <?php if($test_output): ?>
+        <p><?php echo esc_html($test_output); ?></p>
+    <?php endif; ?>
+    </div>

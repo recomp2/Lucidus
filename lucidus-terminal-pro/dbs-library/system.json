@@ -1,5 +1,9 @@
 {
   "scroll_time": 5,
   "debug_mode": false,
+  "sandbox_mode": false,
+  "archive_enabled": true,
+  "confessions_enabled": true,
+  "archetype_modes": [],
   "voice": "OpenAI"
 }

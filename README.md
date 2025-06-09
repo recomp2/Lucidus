@@ -9,6 +9,8 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - REST API endpoints
 - Admin interface with multiple panels
 - Memory archive and gospel management
+- Script tester with execution log
+- Voice settings with test phrase
 
 
 ## ud83dudcc1 Directory Structure
