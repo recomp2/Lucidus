@@ -12,7 +12,9 @@ function lucidus_register_admin_menu() {
         'Lucidus Terminal',
         'manage_options',
         'lucidus-terminal',
-        'lucidus_render_status_page'
+        'lucidus_render_status_page',
+        'dashicons-editor-code',
+        81
     );
 
     add_submenu_page(

@@ -15,4 +15,8 @@ if ( ! defined( 'LUCIDUS_PRO_PATH' ) ) {
     define( 'LUCIDUS_PRO_PATH', plugin_dir_path( __FILE__ ) );
 }
 
+if ( ! defined( 'LUCIDUS_PRO_URL' ) ) {
+    define( 'LUCIDUS_PRO_URL', plugin_dir_url( __FILE__ ) );
+}
+
 require_once LUCIDUS_PRO_PATH . 'core/lucidus-terminal-core.php';
