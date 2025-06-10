@@ -21,7 +21,7 @@ function dbs_confirmation_page() {
 
     if ($is_new && isset($_POST['chapter_name']) && check_admin_referer('dbs_name_town')) {
         $chapter = sanitize_text_field($_POST['chapter_name']);
-        dbs_register_geo($city, $state, $chapter);
+        dbs_claim_geo($city, $state, $chapter, $username);
         dbs_write_scroll($state, $city, $chapter, $username);
         $profile['geo'] = $chapter;
         dbs_write_profile($username, $profile);

@@ -60,8 +60,15 @@ function dbs_initiation_form() {
             'geo'        => $geo
         ];
         dbs_write_profile($username, $profile);
-        $new_town = !dbs_geo_exists($city, $state);
+        $new_town = dbs_register_geo_pending($city, $state, $username);
         dbs_update_ai_memory($username, $profile);
+
+        $logdir = DBS_LIBRARY_DIR . 'logs/';
+        wp_mkdir_p($logdir);
+        $line = $username."\t".$latin."\t".$geo."\t".dbs_rank_label($rank)."\n";
+        file_put_contents($logdir.'joins.txt', $line, FILE_APPEND);
+        wp_mail(get_option('admin_email'), 'DBS Member Joined', $line);
+
         wp_signon(['user_login'=>$username,'user_password'=>$password,'remember'=>true]);
         $args = ['user'=>$username,'new_town'=>$new_town?1:0];
         if ($new_town) { $args['city']=$city; $args['state']=$state; }

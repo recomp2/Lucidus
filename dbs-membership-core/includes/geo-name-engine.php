@@ -7,23 +7,69 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
+function dbs_load_geos(){
+    $file = DBS_LIBRARY_DIR . 'geos.json';
+    return file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+}
+
+function dbs_save_geos($geos){
+    $file = DBS_LIBRARY_DIR . 'geos.json';
+    file_put_contents($file, json_encode($geos));
+}
+
 function dbs_geo_exists($city, $state) {
-    $geofile = DBS_LIBRARY_DIR . 'geos.json';
-    $geos = file_exists($geofile) ? json_decode(file_get_contents($geofile), true) : [];
+    $geos = dbs_load_geos();
     $key = strtolower("$city,$state");
     return isset($geos[$key]);
 }
 
-function dbs_register_geo($city, $state, $chapter) {
-    $geofile = DBS_LIBRARY_DIR . 'geos.json';
-    $geos = file_exists($geofile) ? json_decode(file_get_contents($geofile), true) : [];
+function dbs_register_geo_pending($city, $state, $username){
+    $geos = dbs_load_geos();
     $key = strtolower("$city,$state");
-    if (!isset($geos[$key])) {
-        $geos[$key] = ['name' => $chapter, 'city' => $city, 'state' => $state];
-        file_put_contents($geofile, json_encode($geos));
-        return true; // new town
+    if (!isset($geos[$key]) || (isset($geos[$key]['status']) && $geos[$key]['status']==='pending' && time()-$geos[$key]['timestamp']>DAY_IN_SECONDS)){
+        $geos[$key] = [
+            'city'=>$city,
+            'state'=>$state,
+            'status'=>'pending',
+            'pending_user'=>$username,
+            'timestamp'=>time()
+        ];
+        dbs_save_geos($geos);
+        return true;
     }
-    return false; // existing
+    return false;
+}
+
+function dbs_claim_geo($city,$state,$chapter,$username){
+    $geos = dbs_load_geos();
+    $key = strtolower("$city,$state");
+    $geos[$key] = [
+        'name'=>$chapter,
+        'city'=>$city,
+        'state'=>$state,
+        'founder'=>$username,
+        'status'=>'final',
+        'timestamp'=>time()
+    ];
+    dbs_save_geos($geos);
+}
+
+function dbs_update_geo($city,$state,$chapter){
+    $geos = dbs_load_geos();
+    $key = strtolower("$city,$state");
+    if(isset($geos[$key])){
+        $geos[$key]['name']=$chapter;
+        dbs_save_geos($geos);
+    }
+}
+
+function dbs_remove_geo($city,$state){
+    $geos = dbs_load_geos();
+    $key = strtolower("$city,$state");
+    if(isset($geos[$key])){
+        unset($geos[$key]);
+        dbs_save_geos($geos);
+    }
 }
 
 function dbs_generate_geo_options($city) {

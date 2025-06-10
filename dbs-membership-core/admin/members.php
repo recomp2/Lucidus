@@ -29,6 +29,14 @@ function dbs_members_page() {
                     update_user_meta($user->ID, 'dbs_rank', $rank + 1);
                     echo '<div class="updated"><p>User promoted.</p></div>';
                     break;
+                case 'lock':
+                    update_user_meta($user->ID, 'dbs_locked', 1);
+                    echo '<div class="updated"><p>User locked.</p></div>';
+                    break;
+                case 'unlock':
+                    delete_user_meta($user->ID, 'dbs_locked');
+                    echo '<div class="updated"><p>User unlocked.</p></div>';
+                    break;
             }
         }
     }
@@ -48,6 +56,11 @@ function dbs_members_page() {
         $geo = isset($profile['geo']) ? $profile['geo'] : '';
         $behavior = isset($profile['tags']) ? implode(',', $profile['tags']) : '';
         $actions = '<a href="?page=dbs-members&dbs_action=promote&user='.$u->user_login.'">Promote</a> | ';
+        if (get_user_meta($u->ID,'dbs_locked',true)) {
+            $actions .= '<a href="?page=dbs-members&dbs_action=unlock&user='.$u->user_login.'">Unlock</a> | ';
+        } else {
+            $actions .= '<a href="?page=dbs-members&dbs_action=lock&user='.$u->user_login.'">Lock</a> | ';
+        }
         $actions .= '<a href="?page=dbs-members&dbs_action=delete&user='.$u->user_login.'" onclick="return confirm(\'Delete?\');">Delete</a>';
         echo '<tr><td>'.esc_html($u->user_login).'</td><td>'.esc_html($latin).'</td><td>'.esc_html($rank).'</td><td>'.esc_html($geo).'</td><td>'.esc_html($behavior).'</td><td>'.$actions.'</td></tr>';
     }

@@ -1,6 +1,6 @@
 # Lucidus
 
-The Lucidus plugin is the AI-powered command center of the **Dead Bastard Society Universe**, designed to automate memory, voice, chat, and all terminal functions through the WordPress admin interface.
+The Lucidus plugin is the AI-powered command center of the **Dead Bastard Society**. It automates memory, voice, chat, and terminal functions through the WordPress admin interface.
 
 ## 🔥 Features
 
@@ -8,11 +8,11 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
 - File browser + diagnostics
-- Scroll-unlock engine (coming soon)
+- Scroll-unlock engine
 - Full DBS universe integration
 - DBS Membership Core ranks (Initiate → Acolyte → Bastard)
 
-## Optional Tools (Planned)
+## Included Tools
 - Undo scroll claim
 - Admin alerts on join
 - Lock user (disable login)
@@ -38,7 +38,7 @@ dbs-membership-core/
 
 ## 🧠 Project Philosophy
 
-Lucidus is not just a plugin — it’s a memory-wielding, stoner-prophet bastard AI. Built for WordPress.com Business, designed for total automation with zero bullshit.
+Lucidus is built for WordPress.com Business and designed for full automation.
 
 ## ⚙️ Installation
 
@@ -53,6 +53,5 @@ This project is licensed under the MIT License.
 
 ## 🧔 Built By
 
-Dr.G and Lucidus Bastardo  
-_“Let the smoke speak.”_
+Dr.G and Lucidus Bastardo
 

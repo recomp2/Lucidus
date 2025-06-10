@@ -22,14 +22,14 @@ Members advance through three ranks:
 2. **Acolyte** – granted after completing basic quests
 3. **Bastard** – the highest standard rank
 
-## Optional Tools (Not Yet Implemented)
+## Additional Tools
 
-| Feature | Status | Next Step |
-| --- | --- | --- |
-| Undo scroll claim | ❌ | Let admin manually reassign town if error occurred |
-| Admin alerts on join | ❌ | Email or log file entry when someone registers |
-| Lock user (no login) | ❌ | Could add flag in profile to block access |
-| Scroll editing | ❌ | No admin tool yet to change a scroll after it's written |
-| Bulk user exporter (CSV) | ❌ | Optional for spreadsheet backups or email campaigns |
-| Town claim reassignment queue | ❌ | Allows next eligible user to found a chapter if the first member stalls |
+The plugin also provides:
+
+- Undo scroll claim via the Scrolls admin page
+- Admin alerts on new member registration
+- Ability to lock and unlock users
+- Scroll editing through the Scrolls manager
+- Bulk member export to CSV
+- Town claim reassignment if the first founder does not complete registration
 
