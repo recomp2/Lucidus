@@ -29,7 +29,7 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 | 🔒 Lock user | ✅ | Prevent login via user meta flag |
 | 🔁 Scroll editing | ✅ | Edit any scroll file in the admin area |
 | 🗃️ Bulk user exporter | ✅ | CSV export of members |
-| 🧭 Town claim reassignment queue | ❌ | Planned feature |
+| 🧭 Town claim reassignment queue | ✅ | Manage pending towns via Geo Queue |
 
 ## 📁 Directory Structure
 lucidus-terminal-pro/

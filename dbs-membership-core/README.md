@@ -42,7 +42,7 @@ The plugin also provides:
 | 🔒 Lock user (no login) | ✅ | Set `dbs_locked` meta to prevent login |
 | 🔁 Scroll editing | ✅ | Edit stored scroll files through the admin page |
 | 🗃️ Bulk user exporter (CSV) | ✅ | Download members list for spreadsheets |
-| 🧭 Town claim reassignment queue | ❌ | Future improvement for skipped founders |
+| 🧭 Town claim reassignment queue | ✅ | Manage pending towns via Geo Queue |
 
 ## Compatibility
 

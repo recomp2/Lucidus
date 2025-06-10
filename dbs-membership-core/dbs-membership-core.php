@@ -59,6 +59,7 @@ if (is_admin()) {
     require_once DBS_MEMBERSHIP_DIR . 'admin/analytics.php';
     require_once DBS_MEMBERSHIP_DIR . 'admin/scrolls.php';
     require_once DBS_MEMBERSHIP_DIR . 'admin/export.php';
+    require_once DBS_MEMBERSHIP_DIR . 'admin/geo-queue.php';
 }
 
 // Frontend pages (shortcodes)
