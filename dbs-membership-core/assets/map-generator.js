@@ -1,3 +1,7 @@
+/**
+ * Dead Bastard Society Membership Core
+ * Map generator for geo shortcode
+ */
 function initDbsMap(data, containerId){
     if (typeof google === 'undefined' || !google.maps){
         return;
