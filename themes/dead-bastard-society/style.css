@@ -1,0 +1,13 @@
+/*
+Theme Name: Dead Bastard Society
+Theme URI: https://example.com/dead-bastard-society
+Author: Dr.G and Lucidus Bastardo
+Description: Custom theme for the Dead Bastard Society Universe.
+Version: 0.1
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
