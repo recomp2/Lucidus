@@ -1,0 +1,27 @@
+/*
+Theme Name: Dead Bastard Society
+Theme URI: https://example.com/dead-bastard-society
+Author: Dr.G
+Author URI: https://example.com
+Description: Custom theme for the Dead Bastard Society universe.
+Version: 1.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: dead-bastard-society
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background:#000;
+    color:#eee;
+}
+
+/* Basic fog effect */
+body:before {
+    content: '';
+    position: fixed;
+    left:0;right:0;top:0;bottom:0;
+    background: url('../assets/branding/logo.svg') center center no-repeat;
+    opacity:0.05;
+    pointer-events:none;
+}
