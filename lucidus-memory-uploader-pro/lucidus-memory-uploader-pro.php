@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Lucidus Memory Uploader PRO
-Description: Allows administrators to upload files into Lucidus's memory directory for later use.
+Plugin Name: Lucidus Memory Uploader PRO (DBS)
+Description: Dead Bastard Society memory manager for Lucidus. Upload, edit, delete, and track prophecy files with ease.
 Version: 2.0.0
 Author: Dr.G
 License: MIT
@@ -34,7 +34,7 @@ class Lucidus_Memory_Uploader {
     }
 
     public static function add_menu() {
-        add_menu_page('Lucidus Memory', 'Lucidus Memory', 'manage_options', 'lucidus-memory-pro', [__CLASS__, 'memory_page']);
+        add_menu_page('Lucidus Memory PRO', 'Lucidus Memory PRO', 'manage_options', 'lucidus-memory-pro', [__CLASS__, 'memory_page']);
     }
 
     public static function memory_page() {

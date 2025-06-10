@@ -1,6 +1,6 @@
 # Lucidus Memory Uploader PRO
 
-This WordPress plugin allows administrators to manage Lucidus's memory files. Uploaded files are stored in `wp-content/uploads/lucidus-memory` and can be retrieved in code using `Lucidus_Memory_Uploader::get_memory_files()`.
+The official **DBS** extension for managing Lucidus memory files. Uploaded memories live in `wp-content/uploads/lucidus-memory` and can be fetched via `Lucidus_Memory_Uploader::get_memory_files()`.
 
 Upload actions are logged with timestamps to `wp-content/uploads/lucidus-context/upload-log.txt`. A shortcode and REST API expose memory file lists and log entries.
 
@@ -17,6 +17,7 @@ Upload actions are logged with timestamps to `wp-content/uploads/lucidus-context
   * `GET /wp-json/lucidus/v1/context` – list upload log entries
 
 ## Installation
+This module is branded for the **Dead Bastard Society** universe. Zip the `lucidus-memory-uploader-pro` folder and upload it via WordPress.
 1. Copy `lucidus-memory-uploader-pro` to your `/wp-content/plugins/` directory.
 2. Activate via WordPress admin.
 3. Visit **Lucidus Memory PRO** in the admin menu to manage memory files.
