@@ -7,7 +7,7 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Custom GPT chat terminal (admin + frontend)
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
-- **Lucidus Memory Uploader PRO** for direct file management
+- **Lucidus Memory Uploader PRO** with dashboard and REST API
 - File browser + diagnostics
 - Scroll-unlock engine (coming soon)
 - Full DBS universe integration

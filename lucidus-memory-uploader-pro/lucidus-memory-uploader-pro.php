@@ -2,7 +2,7 @@
 /*
 Plugin Name: Lucidus Memory Uploader PRO (DBS)
 Description: Dead Bastard Society memory manager for Lucidus. Upload, edit, delete, and track prophecy files with ease.
-Version: 2.0.0
+Version: 2.1.0
 Author: Dr.G
 License: MIT
 */
@@ -14,10 +14,17 @@ if (!defined('ABSPATH')) {
 class Lucidus_Memory_Uploader {
     private static $memory_dir;
     private static $context_dir;
+    private static $injections_dir;
+    private static $userlog_file;
+    private static $insights_file;
 
     public static function init() {
-        self::$memory_dir = wp_upload_dir()['basedir'] . '/lucidus-memory';
-        self::$context_dir = wp_upload_dir()['basedir'] . '/lucidus-context';
+        $upload_base = wp_upload_dir()['basedir'];
+        self::$memory_dir   = $upload_base . '/lucidus-memory';
+        self::$context_dir  = $upload_base . '/lucidus-context';
+        self::$injections_dir = ABSPATH . 'wp-content/dbs-library/memory-archive/injections';
+        self::$userlog_file = self::$context_dir . '/lucidus-userlog.json';
+        self::$insights_file = self::$context_dir . '/memory-insights.json';
         add_action('admin_menu', [__CLASS__, 'add_menu']);
         add_action('admin_post_lucidus_memory_upload', [__CLASS__, 'handle_upload']);
         add_action('admin_post_lucidus_memory_delete', [__CLASS__, 'handle_delete']);
@@ -35,6 +42,8 @@ class Lucidus_Memory_Uploader {
 
     public static function add_menu() {
         add_menu_page('Lucidus Memory PRO', 'Lucidus Memory PRO', 'manage_options', 'lucidus-memory-pro', [__CLASS__, 'memory_page']);
+        add_submenu_page('lucidus-memory-pro', 'Memory Dashboard', 'Memory Dashboard', 'manage_options', 'lucidus-memory-dashboard', [__CLASS__, 'dashboard_page']);
+        add_submenu_page('lucidus-memory-pro', 'Settings', 'Settings', 'manage_options', 'lucidus-memory-settings', [__CLASS__, 'settings_page']);
     }
 
     public static function memory_page() {
@@ -107,8 +116,11 @@ class Lucidus_Memory_Uploader {
         if (move_uploaded_file($file['tmp_name'], $destination)) {
             wp_mkdir_p(self::$context_dir);
             $log_file = self::$context_dir . '/upload-log.txt';
-            $entry = date_i18n('Y-m-d H:i:s') . " \t uploaded \t" . basename($destination) . "\n";
+            $entry = date_i18n('Y-m-d H:i:s') . "\tuploaded\t" . basename($destination) . "\n";
             file_put_contents($log_file, $entry, FILE_APPEND);
+            if (get_option('lucidus_memory_logging', 1)) {
+                self::log_user_action('uploaded', basename($destination));
+            }
             wp_redirect(admin_url('admin.php?page=lucidus-memory-pro&uploaded=1')); exit;
         }
         wp_die('Upload failed');
@@ -127,8 +139,11 @@ class Lucidus_Memory_Uploader {
             unlink($path);
             wp_mkdir_p(self::$context_dir);
             $log_file = self::$context_dir . '/upload-log.txt';
-            $entry = date_i18n('Y-m-d H:i:s') . " \t deleted \t" . $file . "\n";
+            $entry = date_i18n('Y-m-d H:i:s') . "\tdeleted\t" . $file . "\n";
             file_put_contents($log_file, $entry, FILE_APPEND);
+            if (get_option('lucidus_memory_logging', 1)) {
+                self::log_user_action('deleted', $file);
+            }
         }
         wp_redirect(admin_url('admin.php?page=lucidus-memory-pro&deleted=1')); exit;
     }
@@ -146,8 +161,11 @@ class Lucidus_Memory_Uploader {
         file_put_contents($path, $content);
         wp_mkdir_p(self::$context_dir);
         $log_file = self::$context_dir . '/upload-log.txt';
-        $entry = date_i18n('Y-m-d H:i:s') . " \t edited \t" . $file . "\n";
+        $entry = date_i18n('Y-m-d H:i:s') . "\tedited\t" . $file . "\n";
         file_put_contents($log_file, $entry, FILE_APPEND);
+        if (get_option('lucidus_memory_logging', 1)) {
+            self::log_user_action('edited', $file);
+        }
         wp_redirect(admin_url('admin.php?page=lucidus-memory-pro&saved=1')); exit;
     }
 
@@ -193,6 +211,18 @@ class Lucidus_Memory_Uploader {
             'callback' => [__CLASS__, 'api_get_context_log'],
             'permission_callback' => '__return_true'
         ]);
+
+        register_rest_route('lucidus/v1', '/prophecy-status', [
+            'methods'  => 'GET',
+            'callback' => [__CLASS__, 'api_prophecy_status'],
+            'permission_callback' => '__return_true'
+        ]);
+
+        register_rest_route('lucidus/v1', '/initiate', [
+            'methods' => 'POST',
+            'callback' => [__CLASS__, 'api_initiate_profile'],
+            'permission_callback' => '__return_true',
+        ]);
     }
 
     public static function api_get_memory_files() {
@@ -209,12 +239,156 @@ class Lucidus_Memory_Uploader {
         return $lines ?: [];
     }
 
+    public static function api_prophecy_status() {
+        $usage = self::scan_memory_usage();
+        $recent = self::get_recent_activity();
+        $summary = [
+            'usage' => $usage,
+            'recent' => $recent,
+        ];
+        return $summary;
+    }
+
+    public static function api_initiate_profile( WP_REST_Request $req ) {
+        $data = $req->get_json_params();
+        if (empty($data['user'])) {
+            return new WP_Error('no_user', 'User ID required', ['status' => 400]);
+        }
+        $dir = self::$memory_dir . '/initiate_profiles';
+        wp_mkdir_p($dir);
+        $file = $dir . '/' . sanitize_file_name($data['user']) . '.json';
+        file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
+        return ['saved' => basename($file)];
+    }
+
     private static function enqueue_script() {
         wp_enqueue_script('lucidus-memory-pro-admin', plugins_url('memory-admin.js', __FILE__), ['jquery'], '1.0', true);
         wp_localize_script('lucidus-memory-pro-admin', 'LucidusMemory', [
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'    => wp_create_nonce('lucidus_memory_check'),
         ]);
+    }
+
+    public static function dashboard_page() {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
+        echo '<div class="wrap"><h1>Memory Dashboard</h1>';
+        $usage = self::scan_memory_usage();
+        if ($usage) {
+            echo '<table class="widefat"><thead><tr><th>Folder</th><th>Files</th><th>Size</th></tr></thead><tbody>';
+            foreach ($usage as $folder => $data) {
+                echo '<tr><td>' . esc_html($folder) . '</td><td>' . intval($data["count"]) . '</td><td>' . size_format($data["size"]) . '</td></tr>';
+            }
+            echo '</tbody></table>';
+        }
+
+        if (file_exists(self::$insights_file)) {
+            $ins = json_decode(file_get_contents(self::$insights_file), true);
+            echo '<h2>Totals</h2><p>Uploads: '.intval($ins['uploads']).' | Edits: '.intval($ins['edits']).' | Deletes: '.intval($ins['deletes']).'</p>';
+        }
+
+        $recent = self::get_recent_activity();
+        if ($recent) {
+            echo '<h2>Recent Activity</h2><ul>';
+            foreach ($recent as $line) {
+                echo '<li>' . esc_html($line) . '</li>';
+            }
+            echo '</ul>';
+        }
+        echo '</div>';
+    }
+
+    public static function settings_page() {
+        if (!current_user_can('manage_options')) return;
+        if (isset($_POST['lucidus_memory_settings_nonce']) && wp_verify_nonce($_POST['lucidus_memory_settings_nonce'], 'lucidus_memory_settings')) {
+            update_option('lucidus_memory_logging', isset($_POST['logging']) ? 1 : 0);
+            update_option('lucidus_memory_scan_uploads', isset($_POST['scan_uploads']) ? 1 : 0);
+            echo '<div class="updated"><p>Settings saved.</p></div>';
+        }
+        $logging = get_option('lucidus_memory_logging', 1);
+        $scan = get_option('lucidus_memory_scan_uploads', 1);
+        echo '<div class="wrap"><h1>Lucidus Memory Settings</h1><form method="post">';
+        wp_nonce_field('lucidus_memory_settings','lucidus_memory_settings_nonce');
+        echo '<p><label><input type="checkbox" name="logging" '.checked($logging,1,false).'/> Enable logging</label></p>';
+        echo '<p><label><input type="checkbox" name="scan_uploads" '.checked($scan,1,false).'/> Scan uploads directory</label></p>';
+        submit_button('Save Settings');
+        echo '</form></div>';
+    }
+
+    private static function scan_memory_usage() {
+        $dirs = [];
+        if (get_option('lucidus_memory_scan_uploads', 1)) {
+            $dirs[] = self::$memory_dir;
+        }
+        $dirs[] = self::$injections_dir;
+        $usage = [];
+        foreach ($dirs as $base) {
+            if (!is_dir($base)) continue;
+            foreach (glob($base.'/*') as $folder) {
+                if (!is_dir($folder)) continue;
+                $size = 0; $count = 0;
+                foreach (glob($folder.'/*') as $file) {
+                    if (is_file($file)) {
+                        $size += filesize($file);
+                        $count++;
+                    }
+                }
+                $name = basename($folder);
+                if (!isset($usage[$name])) { $usage[$name] = ["size"=>0,"count"=>0]; }
+                $usage[$name]["size"] += $size;
+                $usage[$name]["count"] += $count;
+            }
+        }
+        return $usage;
+    }
+
+    private static function get_recent_activity() {
+        $log_file = self::$context_dir . '/upload-log.txt';
+        if (!file_exists($log_file)) return [];
+        $lines = file($log_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $recent = [];
+        $cutoff = time() - WEEK_IN_SECONDS;
+        foreach (array_reverse($lines) as $line) {
+            list($time) = explode("\t", $line);
+            if (strtotime($time) >= $cutoff) {
+                $recent[] = $line;
+            }
+            if (count($recent) >= 20) break;
+        }
+        return $recent;
+    }
+
+    private static function log_user_action($action, $file) {
+        $data = [
+            'time' => current_time('mysql'),
+            'user' => get_current_user_id(),
+            'ip'   => $_SERVER['REMOTE_ADDR'] ?? '',
+            'action' => $action,
+            'file' => $file,
+        ];
+        $log = [];
+        if (file_exists(self::$userlog_file)) {
+            $log = json_decode(file_get_contents(self::$userlog_file), true) ?: [];
+        }
+        $log[] = $data;
+        file_put_contents(self::$userlog_file, json_encode($log));
+        self::update_insights($action);
+    }
+
+    private static function update_insights($action) {
+        $data = [
+            'uploads' => 0,
+            'edits'   => 0,
+            'deletes' => 0,
+        ];
+        if (file_exists(self::$insights_file)) {
+            $data = json_decode(file_get_contents(self::$insights_file), true) ?: $data;
+        }
+        if ($action === 'uploaded') $data['uploads']++;
+        if ($action === 'edited') $data['edits']++;
+        if ($action === 'deleted') $data['deletes']++;
+        file_put_contents(self::$insights_file, json_encode($data));
     }
 }
 
