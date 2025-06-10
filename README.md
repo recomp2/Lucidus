@@ -10,6 +10,7 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - File browser + diagnostics
 - Scroll-unlock engine (coming soon)
 - Full DBS universe integration
+- DBS Membership Core ranks (Initiate → Acolyte → Bastard)
 
 ## 📁 Directory Structure
 lucidus-terminal-pro/
@@ -20,6 +21,12 @@ lucidus-terminal-pro/
 ├── lucidus-terminal.php
 ├── readme.txt
 └── README.md
+dbs-membership-core/
+├── admin/
+├── assets/
+├── frontend/
+├── includes/
+└── dbs-membership-core.php
 
 ## 🧠 Project Philosophy
 
