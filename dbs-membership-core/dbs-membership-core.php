@@ -41,9 +41,13 @@ if (is_admin()) {
     require_once DBS_MEMBERSHIP_DIR . 'admin/members.php';
     require_once DBS_MEMBERSHIP_DIR . 'admin/editor.php';
     require_once DBS_MEMBERSHIP_DIR . 'admin/settings.php';
+    require_once DBS_MEMBERSHIP_DIR . 'admin/analytics.php';
 }
 
 // Frontend pages (shortcodes)
 require_once DBS_MEMBERSHIP_DIR . 'frontend/initiation-form.php';
 require_once DBS_MEMBERSHIP_DIR . 'frontend/confirmation.php';
+require_once DBS_MEMBERSHIP_DIR . 'frontend/profile.php';
+require_once DBS_MEMBERSHIP_DIR . 'frontend/shortcode-scroll-list.php';
+require_once DBS_MEMBERSHIP_DIR . 'frontend/shortcode-map.php';
 
