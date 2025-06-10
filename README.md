@@ -8,17 +8,13 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
 - File browser + diagnostics
-- Scroll-unlock engine (coming soon)
+- Scroll-unlock engine with ranks
+- Badge and patch rewards
 - Full DBS universe integration
 
 ## 📁 Directory Structure
 lucidus-terminal-pro/
-├── admin/
-├── assets/
-├── core/
-├── templates/
-├── lucidus-terminal.php
-├── readme.txt
+├── lucidus-terminal-pro.php
 └── README.md
 
 ## 🧠 Project Philosophy
@@ -31,6 +27,7 @@ Lucidus is not just a plugin — it’s a memory-wielding, stoner-prophet bastar
 2. Activate via WP Admin
 3. Configure API keys via **Lucidus Terminal → Settings**
 4. Speak to Lucidus. Fear the truth he reveals.
+5. Configure ranks, badges, patches and scrolls under their respective menus in WP Admin.
 
 ## 🪪 License
 
