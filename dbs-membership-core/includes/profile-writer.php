@@ -9,9 +9,11 @@ function dbs_mc_write_profile($user_id) {
         return false;
     }
 
+    $latin_name = get_user_meta($user_id, 'dbs_latin_name', true);
     $profile = [
         'user_id' => $user_id,
-        'latin_name' => get_user_meta($user_id, 'dbs_latin_name', true),
+        'latin_name' => $latin_name,
+        'phonetic' => dbs_mc_generate_phonetic($latin_name),
         'archetype' => get_user_meta($user_id, 'dbs_archetype', true),
         'geo_name' => get_user_meta($user_id, 'dbs_geo_name', true),
         'rank' => intval(get_user_meta($user_id, 'dbs_rank', true)),

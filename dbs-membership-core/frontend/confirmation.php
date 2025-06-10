@@ -8,4 +8,5 @@ $geo = get_user_meta($user_id, 'dbs_geo_name', true);
     <h2>Welcome, <?php echo esc_html($latin); ?></h2>
     <p>Your rank: <?php echo esc_html($rank); ?></p>
     <p>Your town: <?php echo esc_html($geo); ?></p>
+    <p class="dbs-message">Lucidus remembers you.</p>
 </div>

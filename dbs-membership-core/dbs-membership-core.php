@@ -20,9 +20,26 @@ require_once DBS_MC_PLUGIN_DIR . 'includes/geo-name-engine.php';
 require_once DBS_MC_PLUGIN_DIR . 'includes/ai-bridge.php';
 require_once DBS_MC_PLUGIN_DIR . 'includes/behavior-tags.php';
 
+function dbs_mc_get_profiles_dir() {
+    $upload_dir = wp_upload_dir();
+    return trailingslashit($upload_dir['basedir']) . 'dbs-library/memory-archive/profiles/';
+}
+
+function dbs_mc_get_archetypes() {
+    $list = get_option('dbs_mc_archetypes', 'dub, randall, nasty_p');
+    $arr = array_filter(array_map('trim', explode(',', $list)));
+    return $arr;
+}
+
 // Register activation hook.
 function dbs_mc_activate() {
-    // Setup default options if needed.
+    $dir = dbs_mc_get_profiles_dir();
+    if (!file_exists($dir)) {
+        wp_mkdir_p($dir);
+    }
+    if (!get_option('dbs_mc_archetypes')) {
+        update_option('dbs_mc_archetypes', 'dub, randall, nasty_p');
+    }
 }
 register_activation_hook(__FILE__, 'dbs_mc_activate');
 
@@ -50,6 +67,7 @@ function dbs_mc_render_initiation_form() {
 function dbs_mc_admin_menu() {
     add_menu_page('DBS Members', 'DBS Members', 'manage_options', 'dbs-members', 'dbs_mc_members_page');
     add_submenu_page('dbs-members', 'Settings', 'Settings', 'manage_options', 'dbs-members-settings', 'dbs_mc_settings_page');
+    add_submenu_page(null, 'Edit Member', 'Edit Member', 'manage_options', 'dbs-member-editor', 'dbs_mc_editor_page');
 }
 add_action('admin_menu', 'dbs_mc_admin_menu');
 
@@ -59,4 +77,8 @@ function dbs_mc_members_page() {
 
 function dbs_mc_settings_page() {
     include DBS_MC_PLUGIN_DIR . 'admin/settings.php';
+}
+
+function dbs_mc_editor_page() {
+    include DBS_MC_PLUGIN_DIR . 'admin/editor.php';
 }
