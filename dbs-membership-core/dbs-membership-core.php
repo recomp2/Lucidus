@@ -18,6 +18,15 @@ if (!defined('ABSPATH')) {
 // Path constants
 define('DBS_MEMBERSHIP_DIR', plugin_dir_path(__FILE__));
 define('DBS_MEMBERSHIP_URL', plugin_dir_url(__FILE__));
+define('DBS_LIBRARY_DIR', WP_CONTENT_DIR . '/dbs-library/memory-archive/');
+
+register_activation_hook(__FILE__, function() {
+    wp_mkdir_p(DBS_LIBRARY_DIR . 'profiles');
+    wp_mkdir_p(DBS_LIBRARY_DIR . 'scrolls');
+    if (!file_exists(DBS_LIBRARY_DIR . 'geos.json')) {
+        file_put_contents(DBS_LIBRARY_DIR . 'geos.json', json_encode([]));
+    }
+});
 
 // Include logic files
 require_once DBS_MEMBERSHIP_DIR . 'includes/latin-name-generator.php';

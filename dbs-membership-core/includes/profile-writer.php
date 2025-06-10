@@ -8,7 +8,7 @@
 if (!defined('ABSPATH')) { exit; }
 
 function dbs_profile_path($username) {
-    return DBS_MEMBERSHIP_DIR . 'memory-archive/profiles/' . strtolower($username) . '.json';
+    return DBS_LIBRARY_DIR . 'profiles/' . strtolower($username) . '.json';
 }
 
 function dbs_write_profile($username, $data) {
