@@ -33,3 +33,18 @@ The plugin also provides:
 - Bulk member export to CSV
 - Town claim reassignment if the first founder does not complete registration
 
+## What's Still Optional
+
+| Feature | Status | Notes |
+| ------- | ------ | ----- |
+| 🔄 Undo scroll claim | ✅ | Admin can delete a scroll and reassign the town |
+| 📨 Admin alerts on join | ✅ | Emails and logs when members register |
+| 🔒 Lock user (no login) | ✅ | Set `dbs_locked` meta to prevent login |
+| 🔁 Scroll editing | ✅ | Edit stored scroll files through the admin page |
+| 🗃️ Bulk user exporter (CSV) | ✅ | Download members list for spreadsheets |
+| 🧭 Town claim reassignment queue | ❌ | Future improvement for skipped founders |
+
+## Compatibility
+
+Tested with PHP **8.3.22**, WordPress **6.8.1**, and the Lucidus plugin **4.0.0**.
+

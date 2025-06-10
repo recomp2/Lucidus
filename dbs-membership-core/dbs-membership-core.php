@@ -9,6 +9,8 @@ Plugin Name: DBS Membership Core
 Description: Handles membership initiation and profile memory for the Dead Bastard Society.
 Version: 1.0.0
 Author: Lucidus Bastardo
+Requires at least: 6.8
+Requires PHP: 8.0
 */
 
 if (!defined('ABSPATH')) {
@@ -19,6 +21,17 @@ if (!defined('ABSPATH')) {
 define('DBS_MEMBERSHIP_DIR', plugin_dir_path(__FILE__));
 define('DBS_MEMBERSHIP_URL', plugin_dir_url(__FILE__));
 define('DBS_LIBRARY_DIR', WP_CONTENT_DIR . '/dbs-library/memory-archive/');
+
+// Basic environment compatibility checks
+if (version_compare(PHP_VERSION, '8.0', '<') || version_compare(get_bloginfo('version'), '6.0', '<')) {
+    if (function_exists('deactivate_plugins')) {
+        deactivate_plugins(plugin_basename(__FILE__));
+    } else {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        deactivate_plugins(plugin_basename(__FILE__));
+    }
+    wp_die('DBS Membership Core requires PHP 8.0+ and WordPress 6.0+');
+}
 
 register_activation_hook(__FILE__, function() {
     wp_mkdir_p(DBS_LIBRARY_DIR . 'profiles');
