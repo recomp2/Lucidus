@@ -12,6 +12,14 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Full DBS universe integration
 - DBS Membership Core ranks (Initiate → Acolyte → Bastard)
 
+## Optional Tools (Planned)
+- Undo scroll claim
+- Admin alerts on join
+- Lock user (disable login)
+- Scroll editing
+- Bulk user exporter (CSV)
+- Town claim reassignment queue
+
 ## 📁 Directory Structure
 lucidus-terminal-pro/
 ├── admin/

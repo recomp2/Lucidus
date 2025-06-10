@@ -22,7 +22,7 @@ Members advance through three ranks:
 2. **Acolyte** – granted after completing basic quests
 3. **Bastard** – the highest standard rank
 
-## Optional Features (Not Yet Implemented)
+## Optional Tools (Not Yet Implemented)
 
 | Feature | Status | Next Step |
 | --- | --- | --- |
@@ -31,4 +31,5 @@ Members advance through three ranks:
 | Lock user (no login) | ❌ | Could add flag in profile to block access |
 | Scroll editing | ❌ | No admin tool yet to change a scroll after it's written |
 | Bulk user exporter (CSV) | ❌ | Optional for spreadsheet backups or email campaigns |
+| Town claim reassignment queue | ❌ | Allows next eligible user to found a chapter if the first member stalls |
 
