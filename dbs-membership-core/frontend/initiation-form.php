@@ -7,7 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dbs_mc_initiate_nonce
         $county = sanitize_text_field($_POST['dbs_county']);
         $latin_name = dbs_mc_generate_latin_name($archetype);
         $geo_name = dbs_mc_generate_geo_name($town);
-        dbs_mc_store_geo_claim('default', $county, $geo_name);
+
+        if (!dbs_mc_geo_claim_exists('default', $county)) {
+            dbs_mc_store_geo_claim('default', $county, $geo_name);
+        }
 
         update_user_meta($user_id, 'dbs_archetype', $archetype);
         update_user_meta($user_id, 'dbs_town', $town);
@@ -15,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['dbs_mc_initiate_nonce
         update_user_meta($user_id, 'dbs_latin_name', $latin_name);
         update_user_meta($user_id, 'dbs_geo_name', $geo_name);
         dbs_mc_assign_rank($user_id);
+        dbs_mc_set_behavior_tags($user_id, []);
         dbs_mc_write_profile($user_id);
         dbs_mc_notify_lucidus($user_id);
         wp_redirect(add_query_arg('dbs_confirm', 1, get_permalink()));

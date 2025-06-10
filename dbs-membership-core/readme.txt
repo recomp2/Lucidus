@@ -5,5 +5,6 @@ Tested up to: 6.4
 Stable tag: 0.1.0
 License: MIT
 
-This plugin handles membership onboarding for the Dead Bastard Society.
-It generates Latin names, assigns archetypes, and stores a JSON profile for each member that the Lucidus AI can read.
+This plugin powers the Dead Bastard Society membership system. It creates Latin names,
+assigns archetypes and ranks, saves member profiles to JSON for the Lucidus AI,
+and includes admin screens and REST endpoints for external integrations.

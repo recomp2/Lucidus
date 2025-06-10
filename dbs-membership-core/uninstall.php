@@ -2,7 +2,11 @@
 if (!defined('WP_UNINSTALL_PLUGIN')) {
     exit;
 }
-// Cleanup options and user meta.
+
+// Remove options
 delete_option('dbs_mc_archetypes');
 delete_option('dbs_mc_rank_names');
-// Additional cleanup can be added here.
+delete_option('dbs_mc_enable_geo');
+
+// Remove role
+remove_role('dbs_member');
