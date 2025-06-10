@@ -8,6 +8,7 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
 - File browser + diagnostics
+- Privacy policy and terms pages with consent-based initiation form
 - Scroll-unlock engine (coming soon)
 - Full DBS universe integration
 
