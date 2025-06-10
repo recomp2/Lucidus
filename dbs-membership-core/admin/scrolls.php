@@ -38,6 +38,13 @@ function dbs_scrolls_page(){
             $data = json_decode(file_get_contents($file), true);
             unlink($file);
             dbs_remove_geo($data['city'], $data['state']);
+            if (!empty($data['founder'])) {
+                $profile = dbs_load_profile($data['founder']);
+                if ($profile) {
+                    $profile['geo'] = '';
+                    dbs_write_profile($data['founder'], $profile);
+                }
+            }
             echo '<div class="updated"><p>Scroll deleted.</p></div>';
         }
     }
