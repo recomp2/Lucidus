@@ -1,0 +1,13 @@
+{
+  "name": "Tier Access Control",
+  "version": "1.1",
+  "tiers": {
+    "guest":      {"chat": false, "prophecy": false, "map": false, "scrolls": false, "quests": false, "voice": false},
+    "member":     {"chat": true,  "prophecy": false, "map": true,  "scrolls": true,  "quests": false, "voice": false},
+    "scroll_bearer": {"chat": true,  "prophecy": true,  "map": true,  "scrolls": true,  "quests": true,  "voice": false},
+    "chapter_leader": {"chat": true, "prophecy": true, "map": true, "scrolls": true, "quests": true, "voice": true},
+    "paid_subscriber": {"chat": true, "prophecy": true, "map": true, "scrolls": true, "quests": true, "voice": true},
+    "admin":      {"chat": true,  "prophecy": true,  "map": true,  "scrolls": true,  "quests": true,  "voice": true},
+    "chester":    {"chat": false, "prophecy": false, "map": false, "scrolls": false, "quests": false, "voice": false}
+  }
+}
