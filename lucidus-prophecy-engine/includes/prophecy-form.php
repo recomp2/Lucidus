@@ -22,6 +22,7 @@ function lpe_render_prophecy_form() {
             <input type="text" name="lpe_strain"></label></p>
         <p><label>Mood / Question (optional)<br>
             <textarea name="lpe_question"></textarea></label></p>
+        <?php wp_nonce_field('lpe_prophecy', 'lpe_nonce'); ?>
         <p><button type="submit">Reveal Prophecy</button></p>
     </form>
     <div id="lpe-prophecy-output"></div>
