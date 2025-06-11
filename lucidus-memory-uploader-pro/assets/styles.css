@@ -1,0 +1,16 @@
+#lucidus-memory-pro-response {
+  background:#f8f9fa;
+  border:1px solid #ccc;
+  padding:8px;
+  margin-top:8px;
+  white-space:pre-wrap;
+}
+
+.lucidus-memory-table th,
+.lucidus-memory-table td {
+  padding:4px 8px;
+}
+
+.lucidus-memory-table td.actions a {
+  margin-right:6px;
+}
