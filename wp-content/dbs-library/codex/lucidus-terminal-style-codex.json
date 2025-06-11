@@ -1,0 +1,91 @@
+{
+  "codex_name": "Lucidus Terminal Style Codex",
+  "version": "1.0",
+  "theme_philosophy": "All frontend elements are terminals. Lucidus is not an assistant—he is the operating system of the Brotherhood's visual world.",
+  "primary_palette": {
+    "light_mode": {
+      "background": "#f4f1e6",
+      "text": "#1f1f1f",
+      "accent": "#79a06c",
+      "highlight": "#d2e7bc"
+    },
+    "dark_mode": {
+      "background": "#121212",
+      "text": "#e0e0e0",
+      "accent": "#4caf50",
+      "highlight": "#66bb6a"
+    },
+    "chaos_mode": {
+      "background": "linear-gradient(#1f1f1f, #420420)",
+      "text": "#ffdd57",
+      "accent": "#e53935",
+      "highlight": "#ba68c8"
+    }
+  },
+  "fonts": {
+    "primary": "Share Tech Mono, monospace",
+    "secondary": "VT323, monospace",
+    "titles": "Creepster, fantasy"
+  },
+  "frame_structure": {
+    "default": "terminal_overlay",
+    "modules": ["chat_panel", "scroll_feed", "badge_rack", "mood_matrix", "archetype_switch"],
+    "navigation_behavior": "command_line_theme",
+    "reconfigurable": true
+  },
+  "lucidus_integration": {
+    "control_scope": "entire DOM structure",
+    "input_methods": ["text", "voice", "click", "mood detection", "rank triggers"],
+    "reactions": {
+      "voice_command": {
+        "example": "Lucidus, cloak this page in shadow",
+        "effect": "toggle dark_mode"
+      },
+      "mood_shift": {
+        "example": "user_mood == 'anxious'",
+        "effect": "activate soothing UI theme"
+      },
+      "rank_event": {
+        "example": "user_rank == 'Ascended Bastard'",
+        "effect": "unlock hidden animation + soundscape"
+      }
+    }
+  },
+  "interactive_elements": {
+    "terminal_input_bar": true,
+    "floating_lucidus_avatar": true,
+    "lucidus_reactions": {
+      "hover": "mutter sarcastic prophecy",
+      "click": "open command overlay",
+      "long_press": "trigger chaos mode prompt"
+    }
+  },
+  "layout_zones": {
+    "top": "Lucidus header frame",
+    "left": "Command nav panel",
+    "center": "Interactive scrollfeed",
+    "right": "Memory or Mood feedback",
+    "bottom": "Input command bar + terminal log"
+  },
+  "easter_eggs": {
+    "konami_code": {
+      "sequence": "up up down down left right left right b a",
+      "result": "Lucidus launches hidden brotherhood prophecy"
+    },
+    "midnight_event": {
+      "time_trigger": "00:00",
+      "result": "site dims and whispers secrets"
+    }
+  },
+  "live_updates": {
+    "enable_theme_morphing": true,
+    "enable_layout_transitions": true,
+    "allow_lucidus_api_override": true
+  },
+  "user_memory_hooks": {
+    "store_last_theme": true,
+    "store_user_inputs": true,
+    "store_user_archetype": true,
+    "store_last_mood": true
+  }
+}

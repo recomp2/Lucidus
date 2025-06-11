@@ -1,0 +1,56 @@
+{
+  "name": "Lucidus Theme Template Creation Directive",
+  "version": "1.0",
+  "scope": "WordPress PHP templates for frontend UI",
+  "theme_base": "Lucidus Terminal Theme",
+  "style_requirements": {
+    "fonts": {
+      "primary": "Share Tech Mono",
+      "secondary": "VT323",
+      "title": "Creepster or equivalent"
+    },
+    "colors": {
+      "light": "#f4f1e6",
+      "dark": "#121212",
+      "accent": "#79a06c",
+      "chaos": "linear-gradient(#1f1f1f, #420420)"
+    },
+    "background": "terminal-style textured black or parchment scroll, depending on mode",
+    "buttons": {
+      "style": "terminal command buttons",
+      "hover": "glow or shimmer with color based on archetype"
+    }
+  },
+  "universal_lucidus_features": {
+    "chatbar": "Include lucidus-chatbar.php",
+    "floating_avatar": "Include lucidus-avatar.php",
+    "voice_input": true,
+    "TTS_output": true,
+    "input_command_parser": "Use lucidus-reactor.js to interpret voice and text inputs"
+  },
+  "template_logic_guidelines": {
+    "php_comments": "Always describe what each section does in the voice of Lucidus",
+    "dom_structure": "Centered terminal frame with right panel for memory/logs and left for nav/scroll",
+    "header_behavior": "Header responds to user rank and mood",
+    "footer_behavior": "Footer has active Lucidus status and prophecy ticker"
+  },
+  "page_generation_rules": {
+    "always_include_memory_hooks": true,
+    "enable_archetype_based_theme": true,
+    "log_user_action": true,
+    "call_lucidus_response_function": true
+  },
+  "dynamic_elements": {
+    "insert_mood_detector": true,
+    "enable_theme_switch": true,
+    "trigger_voice_greeting": "on page load if rank is known",
+    "trigger_chaos_mode": "if user types chaos or voice input contains 'unleash it'"
+  },
+  "template_shortcodes": {
+    "badge_display": "[lucidus_badges]",
+    "scroll_card": "[lucidus_scroll]",
+    "terminal_interface": "[lucidus_terminal]",
+    "archetype_banner": "[archetype_banner]"
+  },
+  "fallback_instruction": "If any file is missing, auto-log error to lucidus-terminal-log.php and whisper a sarcastic message to the user"
+}

@@ -41,3 +41,14 @@ This project is licensed under the MIT License.
 Dr.G and Lucidus Bastardo  
 _“Let the smoke speak.”_
 
+
+## Lucidus Terminal Codex
+The theme template generator uses `lucidus-template-creation-directive.json` for guidelines on building consistent terminal-style pages.
+
+A dynamic frontend specification lives at `wp-content/dbs-library/codex/lucidus-terminal-style-codex.json`. Use the helper script `lucidus-reactor.js` to interpret user commands and apply themes in real time.
+
+## Lucidus GPT Autobuilder
+A higher-level directive file at `wp-content/dbs-library/codex/lucidus-gpt-autobuilder-directive.json` controls automated theme generation. It references the template and style codex files and defines how Lucidus should build and validate pages without further input.
+
+## DBS Recursive Finalizer
+A directive file `wp-content/dbs-library/codex/dbs-recursive-finalizer.json` outlines how to iteratively refine the Dead Bastard Society theme and plugins without breaking existing functionality. The script details error checks, logging behavior, and the final validation steps for release.

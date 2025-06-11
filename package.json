@@ -1,0 +1,8 @@
+{
+  "name": "lucidus",
+  "version": "1.0.0",
+  "description": "Automation directives for the Lucidus theme and plugin",
+  "scripts": {
+    "test": "echo 'No tests specified'"
+  }
+}
