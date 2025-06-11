@@ -72,15 +72,19 @@ class Lucidus_Memory_Uploader {
 
         $total = 0;
         echo '<div class="wrap"><h1>Lucidus Memory Files</h1>';
+        if (isset($_GET["uploaded"])) echo '<div class="updated notice"><p>File uploaded.</p></div>';
+        if (isset($_GET["deleted"])) echo '<div class="updated notice"><p>File deleted.</p></div>';
+        if (isset($_GET["saved"])) echo '<div class="updated notice"><p>File saved.</p></div>';
         echo '<form method="post" enctype="multipart/form-data" action="'.admin_url('admin-post.php').'">';
         echo '<input type="hidden" name="action" value="lucidus_memory_upload" />';
         wp_nonce_field('lucidus_memory_upload');
         echo '<input type="file" name="memory_file" required />';
         submit_button('Upload');
         echo '</form>';
+        echo '<input type="search" id="lucidus-memory-search" placeholder="Search files" style="margin-top:10px;" />';
 
         if ($files) {
-            echo '<h2>Existing Files</h2><table class="widefat"><thead><tr><th>Name</th><th>Size</th><th>Modified</th><th>Actions</th></tr></thead><tbody>';
+            echo '<h2>Existing Files</h2><table id="lucidus-memory-table" class="widefat lucidus-memory-table"><thead><tr><th>Name</th><th>Size</th><th>Modified</th><th>Actions</th></tr></thead><tbody>';
             foreach ($files as $file) {
                 $size = size_format(filesize($file));
                 $time = date_i18n(get_option('date_format').' '.get_option('time_format'), filemtime($file));

@@ -1,6 +1,8 @@
 jQuery(function($){
   $('#lucidus-memory-pro-check').on('click', function(){
     var file = $('#lucidus-memory-pro-query').val();
+    var $btn = $(this);
+    $btn.prop('disabled', true).text('Checking...');
     $.post(LucidusMemory.ajax_url, {
       action: 'lucidus_memory_check',
       file: file,
@@ -11,6 +13,15 @@ jQuery(function($){
       }else{
         $('#lucidus-memory-pro-response').text(resp.data || 'Error');
       }
+      $btn.prop('disabled', false).text('Ask Lucidus');
+    });
+  });
+
+  $('#lucidus-memory-search').on('keyup', function(){
+    var term = $(this).val().toLowerCase();
+    $('#lucidus-memory-table tbody tr').each(function(){
+      var text = $(this).find('td:first').text().toLowerCase();
+      $(this).toggle(text.indexOf(term) !== -1);
     });
   });
 });
