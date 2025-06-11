@@ -87,3 +87,4 @@ function lucidus_upgrade_unschedule() {
         wp_unschedule_event($timestamp, 'lucidus_upgrade_insight');
     }
 }
+?>

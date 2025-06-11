@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Lucidus Prophecy */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <div id="lucidus-prophecy">
@@ -8,3 +9,4 @@ get_header();
 </div>
 <?php
 get_footer();
+?>

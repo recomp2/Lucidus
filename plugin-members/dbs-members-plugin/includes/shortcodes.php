@@ -65,3 +65,4 @@ function dbs_dashboard_shortcode() {
     return '<h2>' . sprintf( esc_html__('Welcome, %s', 'dbs-members-plugin'), esc_html($user->display_name) ) . '</h2><p><a href="' . esc_url($logout) . '">' . esc_html__('Log out', 'dbs-members-plugin') . '</a></p>';
 }
 add_shortcode('dbs_dashboard', 'dbs_dashboard_shortcode');
+?>

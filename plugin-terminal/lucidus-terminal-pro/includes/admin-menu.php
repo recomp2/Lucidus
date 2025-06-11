@@ -83,3 +83,4 @@ function lucidus_terminal_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('lucidus_terminal', 'lucidus_terminal_shortcode');
+?>

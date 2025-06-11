@@ -1,0 +1,14 @@
+{
+  "patched_files": [
+    "plugin-members/dbs-members-plugin/includes/map.php",
+    "plugin-members/dbs-members-plugin/includes/shortcodes.php",
+    "plugin-terminal/lucidus-terminal-pro/includes/admin-menu.php",
+    "plugin-terminal/lucidus-terminal-pro/includes/upgrade-engine.php",
+    "plugin-terminal/modules/module-template/module-template-init.php",
+    "plugin-terminal/modules/prophecy-expansion/prophecy-expansion-init.php",
+    "plugin-terminal/modules/tier-access/admin-tier-settings.php",
+    "theme/dead-bastard-society-theme/footer.php",
+    "theme/dead-bastard-society-theme/page-membership-map.php",
+    "theme/dead-bastard-society-theme/template-lucidus-prophecy.php"
+  ]
+}

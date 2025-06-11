@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Membership Map */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <div id="dbs-map-page">
@@ -7,3 +8,4 @@ get_header();
 </div>
 <?php
 get_footer();
+?>

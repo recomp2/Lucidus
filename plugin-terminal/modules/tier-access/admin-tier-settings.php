@@ -1,5 +1,9 @@
 <?php
-if (!defined('ABSPATH')) exit;
+/*
+Plugin Name: Lucidus Tier Access Settings
+Description: Admin interface for managing feature access by tier.
+*/
+if (!defined('ABSPATH')) { exit; }
 require_once __DIR__ . '/tier-access-control.php';
 
 function tier_access_admin_menu() {
@@ -56,3 +60,4 @@ function tier_access_settings_page() {
     </div>
     <?php
 }
+?>

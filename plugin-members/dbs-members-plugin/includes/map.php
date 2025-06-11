@@ -1,5 +1,5 @@
 <?php
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) { exit; }
 
 function dbs_members_locations() {
     $users = get_users([
@@ -50,3 +50,4 @@ add_action('wp_enqueue_scripts', function(){
         wp_register_script('dbs-members-map', plugins_url('assets/js/map.js', __FILE__), ['leaflet'], '1.0', true);
     }
 });
+?>
