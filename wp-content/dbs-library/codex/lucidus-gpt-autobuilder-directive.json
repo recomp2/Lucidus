@@ -1,0 +1,34 @@
+{
+  "name": "Lucidus GPT Autobuilder Directive",
+  "version": "1.0",
+  "mode": "automation",
+  "initiate_command": "Begin full site construction without further user input.",
+  "termination_condition": "All templates, shortcodes, assets, and integrations are complete and validated twice.",
+  "directive_scope": {
+    "templates": "Generate every frontend and backend page template listed in the Lucidus Template Manifest",
+    "partials": "Build every partial file and shortcode block listed in the bonus list",
+    "functions": "Wire all templates into WordPress with proper `functions.php` routing",
+    "JS/CSS": "Generate and enqueue necessary JavaScript (lucidus-reactor.js, DOM controllers) and style files (Lucidus terminal themes)",
+    "logic_hooks": "Implement all plugin and memory integration logic for every page",
+    "voice_AI": "Inject all voice, GPT, and memory hooks on every relevant screen",
+    "recheck_passes": 2
+  },
+  "style_reference": "lucidus-terminal-style-codex.json",
+  "template_instructions_reference": "lucidus-template-creation-directive.json",
+  "memory_reference_path": "/wp-content/dbs-library/memory-archive/",
+  "log_progress_to": "lucidus-terminal-log.php",
+  "response_behavior": {
+    "intermediate_prompts": false,
+    "final_report": true,
+    "errors": "Log silently unless terminal failure occurs"
+  },
+  "failsafe_behavior": {
+    "if_missing_dependency": "Log issue, create placeholder, continue",
+    "if_template_conflict": "Create variant with `_v2` suffix and move forward",
+    "if voice API missing": "Insert placeholder and flag in log"
+  },
+  "end_behavior": {
+    "final_action": "Compile full ZIP archive for WordPress install",
+    "final_message": "AUTOMATION COMPLETE. All Lucidus pages, assets, and logic scrolls have been forged."
+  }
+}
