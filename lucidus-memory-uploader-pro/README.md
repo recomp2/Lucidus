@@ -11,7 +11,8 @@ Upload actions are logged with timestamps to `wp-content/uploads/lucidus-context
 * Display total memory used
 * Activity log of uploads/edits/deletions (per user)
 * Memory dashboard with per-folder totals and recent history
-* Small "Ask Lucidus" chat box checks if a file exists
+* Small "Ask Lucidus" chat box checks if a file exists via AJAX
+* Custom admin CSS styles the memory table
 * `[lucidus_memory_files]` shortcode to display files
 * REST API endpoints:
   * `GET /wp-json/lucidus/v1/memory` – list uploaded files

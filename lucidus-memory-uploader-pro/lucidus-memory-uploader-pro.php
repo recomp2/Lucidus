@@ -30,6 +30,7 @@ class Lucidus_Memory_Uploader {
         add_action('admin_post_lucidus_memory_delete', [__CLASS__, 'handle_delete']);
         add_action('admin_post_lucidus_memory_save', [__CLASS__, 'handle_save']);
         add_action('wp_ajax_lucidus_memory_check', [__CLASS__, 'ajax_check_memory']);
+        add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_assets']);
         register_activation_hook(__FILE__, [__CLASS__, 'activate']);
         add_shortcode('lucidus_memory_files', [__CLASS__, 'shortcode_list_files']);
         add_action('rest_api_init', [__CLASS__, 'register_routes']);
@@ -100,7 +101,6 @@ class Lucidus_Memory_Uploader {
         echo '<button class="button" id="lucidus-memory-pro-check">Ask Lucidus</button>';
         echo '<pre id="lucidus-memory-pro-response"></pre>';
         echo '</div>';
-        self::enqueue_script();
     }
 
     public static function handle_upload() {
@@ -261,8 +261,12 @@ class Lucidus_Memory_Uploader {
         return ['saved' => basename($file)];
     }
 
-    private static function enqueue_script() {
+    public static function enqueue_assets($hook) {
+        if (strpos($hook, 'lucidus-memory') === false) {
+            return;
+        }
         wp_enqueue_script('lucidus-memory-pro-admin', plugins_url('memory-admin.js', __FILE__), ['jquery'], '1.0', true);
+        wp_enqueue_style('lucidus-memory-pro-admin', plugins_url('assets/styles.css', __FILE__), [], '1.0');
         wp_localize_script('lucidus-memory-pro-admin', 'LucidusMemory', [
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce'    => wp_create_nonce('lucidus_memory_check'),
