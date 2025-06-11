@@ -49,3 +49,6 @@ A dynamic frontend specification lives at `wp-content/dbs-library/codex/lucidus-
 
 ## Lucidus GPT Autobuilder
 A higher-level directive file at `wp-content/dbs-library/codex/lucidus-gpt-autobuilder-directive.json` controls automated theme generation. It references the template and style codex files and defines how Lucidus should build and validate pages without further input.
+
+## DBS Recursive Finalizer
+A directive file `wp-content/dbs-library/codex/dbs-recursive-finalizer.json` outlines how to iteratively refine the Dead Bastard Society theme and plugins without breaking existing functionality. The script details error checks, logging behavior, and the final validation steps for release.

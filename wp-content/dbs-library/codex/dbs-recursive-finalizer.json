@@ -1,0 +1,63 @@
+{
+  "name": "DBS Recursive Finalizer (Error-Free Mode)",
+  "version": "3.0",
+  "description": "Use all existing Dead Bastard Society files to recursively refine the theme and plugins. Do not start from scratch. Ensure system remains fully functional and error-free.",
+  "mode": "recursive_refinement",
+  "start_with_existing_files": true,
+  "folders": [
+    "dead-bastard-society-theme",
+    "lucidus-terminal-pro",
+    "dbs-members-plugin"
+  ],
+  "cycles": 10,
+  "halt_conditions": [
+    "No changes across file diffs",
+    "No errors detected",
+    "Max 10 refinement passes reached"
+  ],
+  "refinement_goals": [
+    "Optimize PHP function structure",
+    "Fix or unify REST endpoint registration",
+    "Ensure theme correctly reflects member rank/archetype",
+    "Fix broken hooks, missing shortcodes, or template paths",
+    "Modularize all front-end components for plug-and-play use",
+    "Ensure memory + voice features are fully accessible to theme",
+    "Connect login, register, and profile views into theme flow",
+    "Remove any deprecated WordPress functions",
+    "Improve security and capability checks (nonces, user roles)",
+    "Enqueue all JS/CSS assets properly"
+  ],
+  "error_handling": {
+    "php_syntax_check": true,
+    "lint_javascript": true,
+    "test_all_template_files": true,
+    "ensure_activation_works": true,
+    "check_for_fatal_errors": true
+  },
+  "log_behavior": {
+    "log_each_change": true,
+    "output_log": "recursive-log.json",
+    "summarize_all_changes": true
+  },
+  "output": {
+    "final_files": [
+      "dead-bastard-society-theme/",
+      "lucidus-terminal-pro/",
+      "dbs-members-plugin/",
+      "recursive-log.json",
+      "readme.md"
+    ],
+    "output_type": "install-ready source folder",
+    "manual_zip_note": "Compress these folders manually into ZIPs for WordPress upload. No CLI or compiler needed."
+  },
+  "final_validation": {
+    "wordpress_compatibility": "Business plan compliant",
+    "all_pages_resolvable": true,
+    "login + registration works": true,
+    "memory loads correctly": true,
+    "voice input/output tested": true,
+    "admin panels render without error": true,
+    "no broken shortcodes or hooks": true
+  },
+  "note_to_gpt": "Work only on the existing file structure. Refactor, optimize, and correct errors. Do not remove existing working logic. Every improvement must be tested for functionality and stability before continuing."
+}
