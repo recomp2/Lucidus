@@ -21,6 +21,7 @@ require_once LUCIDUS_TERMINAL_DIR . 'includes/rest-api.php';
 require_once LUCIDUS_TERMINAL_DIR . 'includes/archive-writer.php';
 require_once LUCIDUS_TERMINAL_DIR . 'includes/prophecy.php';
 require_once LUCIDUS_TERMINAL_DIR . 'includes/memory.php';
+require_once LUCIDUS_TERMINAL_DIR . 'lucidus-memory-loader.php';
 require_once dirname(LUCIDUS_TERMINAL_DIR) . '/modules/module-manager.php';
 require_once dirname(LUCIDUS_TERMINAL_DIR) . '/modules/module-admin-interface.php';
 require_once LUCIDUS_TERMINAL_DIR . 'config/lore-loader/lucidus-lore-loader.php';
