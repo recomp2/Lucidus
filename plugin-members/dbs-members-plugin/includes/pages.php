@@ -19,3 +19,4 @@ function dbs_create_page($title, $shortcode) {
         ]);
     }
 }
+?>

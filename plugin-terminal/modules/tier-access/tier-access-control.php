@@ -88,3 +88,4 @@ function tier_access_prompt_append($rank, $archetype, $mood = 'neutral') {
         '{mood}' => $mood,
     ]);
 }
+?>
