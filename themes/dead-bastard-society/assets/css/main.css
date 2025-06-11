@@ -1,3 +1,6 @@
 /* Fog effect CSS */
 .wrap { text-align:center; padding:50px; }
 .btn { background:#444; color:#fff; padding:10px 20px; text-decoration:none; }
+.fade-in { animation: fadeIn 2s ease-in-out forwards; opacity:0; }
+.lead { margin-bottom:20px; font-size:1.2em; }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }

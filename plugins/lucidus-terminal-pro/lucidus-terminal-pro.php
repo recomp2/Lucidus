@@ -2,7 +2,7 @@
 /*
 Plugin Name: Lucidus Terminal Pro
 Description: AI terminal interface for DBS.
-Version: 1.0
+Version: 1.1
 Author: Dr.G
 License: MIT
 */
@@ -30,6 +30,14 @@ function lucidus_terminal_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('lucidus_terminal','lucidus_terminal_shortcode');
+
+// Include group chat template
+function lucidus_terminal_group_shortcode() {
+    ob_start();
+    include dirname(__FILE__) . '/group-terminal.php';
+    return ob_get_clean();
+}
+add_shortcode('lucidus_group_terminal','lucidus_terminal_group_shortcode');
 
 // AJAX handler
 add_action('wp_ajax_lucidus_memory_pull','lucidus_memory_pull');

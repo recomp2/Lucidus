@@ -13,6 +13,7 @@ This repository contains a WordPress theme and two plugins that power the **Dead
 1. Upload the theme to `wp-content/themes/` and activate it.
 2. Upload both plugins to `wp-content/plugins/` and activate them.
 3. Create pages using the included templates (Initiation, Member Profile, Terminal, etc.).
+4. For a group chat experience use the `Lucidus Terminal` page template which loads the `[lucidus_group_terminal]` shortcode.
 
 Profiles are stored in `wp-content/dbs-library/memory-archive/profiles/`.
 
