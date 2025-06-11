@@ -1,0 +1,5 @@
+{
+  "openai_requests": "secured",
+  "memory_endpoints": "nonce_protected",
+  "admin_pages": "checked"
+}

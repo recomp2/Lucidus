@@ -1,0 +1,19 @@
+[
+  {"cycle": 1, "change": "Created base theme and plugin directories."},
+  {"cycle": 2, "change": "Implemented DBS Members shortcodes and activation."},
+  {"cycle": 3, "change": "Added Lucidus Terminal admin pages and settings."},
+  {"cycle": 4, "change": "Created REST API for chat interaction."},
+  {"cycle": 5, "change": "Implemented OpenAI integration and memory storage."},
+  {"cycle": 6, "change": "Added theme templates for login, register and dashboard."},
+  {"cycle": 7, "change": "Linked frontend JS to REST endpoint."},
+  {"cycle": 8, "change": "Polished styles and default layout."},
+  {"cycle": 9, "change": "Wrote documentation and changelog."},
+  {"cycle": 10, "change": "Finalized install instructions and cleanup."},
+  {"cycle": 11, "change": "Improved registration and added terminal shortcode with theme header/footer."},
+  {"cycle": 12, "change": "Implemented memory management, translations and navigation menu."},
+  {"cycle": 13, "change": "Added per-user memory, scroll CPT and health checks."},
+  {"cycle": 14, "change": "Final security audit, conditional styles and rewrite flush."},
+  {"cycle": 15, "change": "Added membership map shortcode and REST endpoint."},
+  {"cycle": 16, "change": "Implemented dynamic module system and admin page."},
+  {"cycle": 17, "change": "Added tier-based access control with archetype-aware denial"}
+]
