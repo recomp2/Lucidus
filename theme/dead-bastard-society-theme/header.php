@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; } ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -12,3 +13,4 @@
         <?php wp_nav_menu(['theme_location' => 'primary']); ?>
     <?php endif; ?>
 </header>
+?>

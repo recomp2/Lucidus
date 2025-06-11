@@ -117,3 +117,4 @@ register_deactivation_hook(__FILE__, function() {
     lucidus_upgrade_unschedule();
     flush_rewrite_rules();
 });
+?>

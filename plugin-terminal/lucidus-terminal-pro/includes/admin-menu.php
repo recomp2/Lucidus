@@ -58,7 +58,7 @@ function lucidus_terminal_settings_page() {
         <form method="post">
             <?php wp_nonce_field('lucidus_save_settings'); ?>
             <label><?php esc_html_e('OpenAI API Key', 'lucidus-terminal-pro'); ?></label>
-            <input type="text" name="openai_key" value="<?php echo $key; ?>" size="50" />
+            <input type="text" name="openai_key" value="<?php echo esc_attr( $key ); ?>" size="50" />
             <p class="submit"><button class="button-primary"><?php esc_html_e('Save', 'lucidus-terminal-pro'); ?></button></p>
         </form>
         <form method="post" style="margin-top:20px;">
@@ -82,5 +82,9 @@ function lucidus_terminal_shortcode() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('lucidus_terminal', 'lucidus_terminal_shortcode');
+
+function lucidus_terminal_register_shortcode() {
+    add_shortcode( 'lucidus_terminal', 'lucidus_terminal_shortcode' );
+}
+add_action( 'init', 'lucidus_terminal_register_shortcode' );
 ?>

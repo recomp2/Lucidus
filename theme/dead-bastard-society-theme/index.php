@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <div id="content">
@@ -7,3 +8,4 @@ get_header();
 </div>
 <?php
 get_footer();
+?>

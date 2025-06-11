@@ -1,5 +1,9 @@
 <?php
-if (!defined('ABSPATH')) exit;
+/*
+Plugin Name: Lucidus Module Manager
+Description: Dynamically loads Lucidus modules.
+*/
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if (!defined('LUCIDUS_MODULES_DIR')) {
     define('LUCIDUS_MODULES_DIR', dirname(LUCIDUS_TERMINAL_DIR) . '/modules/');
@@ -21,3 +25,4 @@ function lucidus_modules_loaded() {
     do_action('lucidus_modules_loaded', $loaded);
 }
 add_action('plugins_loaded', 'lucidus_modules_loaded', 15);
+?>

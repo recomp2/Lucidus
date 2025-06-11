@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Lucidus Archive */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 $archives = lucidus_get_archive_entries();
 ?>
@@ -13,3 +14,4 @@ $archives = lucidus_get_archive_entries();
 </div>
 <?php
 get_footer();
+?>

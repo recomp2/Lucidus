@@ -3,16 +3,15 @@ if (!defined('ABSPATH')) exit;
 
 function dbs_login_shortcode() {
     if (is_user_logged_in()) {
-        return '<p>' . esc_html__('You are already logged in.', 'dbs-members-plugin') . '</p>';
+        return '<p>' . esc_html__( 'You are already logged in.', 'dbs-members-plugin' ) . '</p>';
     }
-    $args = ['echo' => false];
-    $page = get_page_by_title('DBS Dashboard');
-    if ($page) {
-        $args['redirect'] = get_permalink($page);
+    $args = [ 'echo' => false ];
+    $page = get_page_by_title( 'DBS Dashboard' );
+    if ( $page ) {
+        $args['redirect'] = get_permalink( $page );
     }
-    return wp_login_form($args);
+    return wp_login_form( $args );
 }
-add_shortcode('dbs_login', 'dbs_login_shortcode');
 
 function dbs_register_shortcode() {
     if (is_user_logged_in()) {
@@ -54,7 +53,6 @@ function dbs_register_shortcode() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('dbs_register', 'dbs_register_shortcode');
 
 function dbs_dashboard_shortcode() {
     if (!is_user_logged_in()) {
@@ -64,5 +62,11 @@ function dbs_dashboard_shortcode() {
     $logout = wp_logout_url(get_permalink());
     return '<h2>' . sprintf( esc_html__('Welcome, %s', 'dbs-members-plugin'), esc_html($user->display_name) ) . '</h2><p><a href="' . esc_url($logout) . '">' . esc_html__('Log out', 'dbs-members-plugin') . '</a></p>';
 }
-add_shortcode('dbs_dashboard', 'dbs_dashboard_shortcode');
+
+function dbs_members_register_shortcodes() {
+    add_shortcode( 'dbs_login', 'dbs_login_shortcode' );
+    add_shortcode( 'dbs_register', 'dbs_register_shortcode' );
+    add_shortcode( 'dbs_dashboard', 'dbs_dashboard_shortcode' );
+}
+add_action( 'init', 'dbs_members_register_shortcodes' );
 ?>

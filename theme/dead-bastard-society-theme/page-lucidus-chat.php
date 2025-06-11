@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Lucidus Chat */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <div id="lucidus-chat-page">
@@ -9,3 +10,4 @@ get_header();
 </div>
 <?php
 get_footer();
+?>

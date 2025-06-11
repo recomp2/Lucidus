@@ -1,5 +1,9 @@
 <?php
-if (!defined('ABSPATH')) exit;
+/*
+Plugin Name: Lucidus Module Admin Interface
+Description: Admin interface for managing Lucidus modules.
+*/
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 function lucidus_modules_admin_menu() {
     add_submenu_page(
@@ -39,3 +43,4 @@ function lucidus_modules_admin_page() {
     </div>
     <?php
 }
+?>

@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Lucidus Profile */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 if (!is_user_logged_in()) {
     echo '<p>' . esc_html__('Please log in to view your profile.', 'dead-bastard-society-theme') . '</p>';
@@ -18,3 +19,4 @@ if (!is_user_logged_in()) {
     <?php
 }
 get_footer();
+?>

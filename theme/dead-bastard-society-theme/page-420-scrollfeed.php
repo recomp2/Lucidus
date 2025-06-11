@@ -1,5 +1,6 @@
 <?php
 /* Template Name: 420 Scroll Feed */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <div id="scroll-feed-page">
@@ -8,3 +9,4 @@ get_header();
 </div>
 <?php
 get_footer();
+?>

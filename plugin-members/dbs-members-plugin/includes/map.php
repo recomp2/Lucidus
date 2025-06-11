@@ -24,13 +24,17 @@ function dbs_members_locations() {
 }
 
 function dbs_members_map_shortcode() {
-    wp_enqueue_style('leaflet');
-    wp_enqueue_style('dbs-members-map');
-    wp_enqueue_script('leaflet');
-    wp_enqueue_script('dbs-members-map');
+    wp_enqueue_style( 'leaflet' );
+    wp_enqueue_style( 'dbs-members-map' );
+    wp_enqueue_script( 'leaflet' );
+    wp_enqueue_script( 'dbs-members-map' );
     return '<div id="dbs-members-map" style="height:400px"></div>';
 }
-add_shortcode('dbs_members_map', 'dbs_members_map_shortcode');
+
+function dbs_members_map_init() {
+    add_shortcode( 'dbs_members_map', 'dbs_members_map_shortcode' );
+}
+add_action( 'init', 'dbs_members_map_init' );
 
 add_action('rest_api_init', function(){
     register_rest_route('dbs-members/v1', '/locations', [

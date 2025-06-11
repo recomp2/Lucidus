@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 function dbs_theme_setup() {
     add_theme_support('title-tag');
     register_nav_menus([
@@ -31,3 +33,4 @@ function dbs_enqueue_pwa() {
     wp_enqueue_script('dbs-pwa', get_template_directory_uri() . '/pwa-wrapper.js', [], '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'dbs_enqueue_pwa');
+?>
