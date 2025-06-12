@@ -7,6 +7,8 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Custom GPT chat terminal (admin + frontend)
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
+- **Lucidus Memory Uploader PRO** with dashboard, shortcodes, and REST API
+- Memory expansion via configurable paths
 - File browser + diagnostics
 - Scroll-unlock engine (coming soon)
 - Full DBS universe integration
@@ -20,6 +22,10 @@ lucidus-terminal-pro/
 ├── lucidus-terminal.php
 ├── readme.txt
 └── README.md
+lucidus-memory-uploader-pro/
+├── lucidus-memory-uploader-pro.php
+├── memory-admin.js
+└── README.md
 
 ## 🧠 Project Philosophy
 
@@ -28,9 +34,10 @@ Lucidus is not just a plugin — it’s a memory-wielding, stoner-prophet bastar
 ## ⚙️ Installation
 
 1. Upload `lucidus-terminal-pro` to `/wp-content/plugins/`
-2. Activate via WP Admin
-3. Configure API keys via **Lucidus Terminal → Settings**
-4. Speak to Lucidus. Fear the truth he reveals.
+2. Upload `lucidus-memory-uploader-pro` to `/wp-content/plugins/`
+3. Activate both via WP Admin
+4. Configure API keys via **Lucidus Terminal → Settings**
+5. Speak to Lucidus. Fear the truth he reveals.
 
 ## 🪪 License
 
