@@ -1,0 +1,14 @@
+{
+  "todo": [
+    "Build UI form with fields and stylized prophecy chamber",
+    "Connect astrology & numerology libraries",
+    "Build tarot/rune randomizer engine with archetype weights",
+    "Create stoner-plant + fungal response module",
+    "Parable database + religion selector + rewrite logic",
+    "Lucidus GPT prompt builder that fuses it all into prophecy",
+    "Final Latin quote generator",
+    "Save scroll to memory + log",
+    "Voice TTS playback",
+    "Badge + save history for member profiles"
+  ]
+}
