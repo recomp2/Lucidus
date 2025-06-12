@@ -1,0 +1,3 @@
+{
+  "gaps": ["WordPress environment missing for full tests", "Additional capability checks may be required elsewhere"]
+}

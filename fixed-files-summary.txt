@@ -1,0 +1,4 @@
+Updated files:
+- plugin-terminal/lucidus-terminal-pro/includes/admin-menu.php
+- plugin-terminal/lucidus-terminal-pro/assets/js/chat.js
+- plugin-terminal/lucidus-terminal-pro/includes/rest-api.php

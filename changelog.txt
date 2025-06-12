@@ -1,0 +1,14 @@
+v1.0 - Initial release of theme and plugins.
+v1.1 - Improved registration flow, added terminal shortcode, theme header/footer.
+v1.2 - Added memory management, translations and navigation menu.
+v1.3 - Per-user memory, scroll integration and automated health checks.
+v1.4 - Automatic prophecies from weather, news and astrology every 50 minutes.
+v1.5 - Added archive logging, new theme pages and REST archive endpoint.
+v1.6 - Activation flushes rewrite rules, conditional member styles and final security review.
+v1.7 - Added membership map shortcode and REST endpoint.
+v1.8 - Introduced dynamic module system with example prophecy expansion.
+v1.9 - Tier-based access control with archetype-aware denial responses.
+v2.0 - Added basic PWA wrapper and offline fallback.
+
+v2.1 - Introduced lore manifest and helper functions for GPT tone and denial messages.
+v2.2 - System prophecy engine monitors health and suggests upgrades.

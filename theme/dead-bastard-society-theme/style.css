@@ -1,0 +1,39 @@
+/*
+Theme Name: Dead Bastard Society Theme
+Theme URI: https://example.com/dead-bastard-society
+Author: DBS Devs
+Author URI: https://example.com
+Description: Custom theme for the Dead Bastard Society universe with integrated login and dashboard pages.
+Version: 1.0
+License: MIT
+Text Domain: dead-bastard-society-theme
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav a {
+    color: #08f;
+    text-decoration: none;
+}
+
+a {
+    color: #08f;
+}
