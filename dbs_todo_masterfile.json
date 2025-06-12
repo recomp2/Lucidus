@@ -1,0 +1,56 @@
+{
+  "title": "Dead Bastard Society \u2013 To-Do Masterfile (With Rationale)",
+  "version": "June 2025",
+  "site": "deadbastardsociety.com",
+  "purpose": "Document what must be built or finished next in the DBS Universe and why it's essential to the vision.",
+  "tasks": [
+    {
+      "task": "\ud83e\udeaa Complete Scroll Unlock System",
+      "why": "Scrolls are core to DBS prophecy. Unlocking by rank/archetype increases immersion, rewards dedication, and powers lore-based ranking."
+    },
+    {
+      "task": "\ud83c\udf96\ufe0f Finalize Badge + Rank Tracker",
+      "why": "The badge system is the glue of the Brotherhood. Connecting badge triggers (via skits, quests, uploads) to rank ensures continuity and gamifies the site."
+    },
+    {
+      "task": "\ud83e\uddea Upgrade Mood Engine for Lucidus",
+      "why": "Lucidus should behave like a real entity. A mood system with variable memory recall adds depth and makes him feel alive and unpredictable."
+    },
+    {
+      "task": "\ud83d\udccd Deploy Geo Memory + Town Claiming",
+      "why": "User hometowns drive narrative expansion. Each new user from a location expands the map, unlocks lore, and generates region-specific strain names."
+    },
+    {
+      "task": "\ud83d\udcdc Build Member Mirror (Profile Reflection Page)",
+      "why": "A personal page that reflects a user\u2019s rank, tags, scrolls, and Latin name will give every member a reason to explore and keep returning."
+    },
+    {
+      "task": "\ud83d\udd13 Voice Passphrase Scroll Access",
+      "why": "Using voice to unlock prophecy scrolls adds magic, exclusivity, and keeps guests from randomly accessing sacred lore."
+    },
+    {
+      "task": "\ud83e\udde0 Launch User Memory Editor (Admin UI)",
+      "why": "Manual correction and expansion of user files allows custom adjustments. Needed for upgrades, debugging, and narrative expansion."
+    },
+    {
+      "task": "\ud83d\udce1 Add External Search Terminal (GPT + Web)",
+      "why": "Members should be able to search world lore and real events through Lucidus, connecting fiction and reality."
+    },
+    {
+      "task": "\ud83d\udce6 Publish Full Plugin + Theme ZIP for Public Testing",
+      "why": "A clean, installable, test-ready package helps onboard collaborators and provides restore capability in case of failure."
+    },
+    {
+      "task": "\ud83c\udf0d Visualize County Map (DBS-style Morph Map)",
+      "why": "The cartoon county map lets users see DBS expand in real time. Core to showing living growth and territorial humor."
+    },
+    {
+      "task": "\ud83c\udf99\ufe0f Integrate ElevenLabs voice switching by Archetype",
+      "why": "Each archetype should have a signature voice. This adds immersion, especially when Lucidus replies in Dub, Randall, or Nasty P tones."
+    }
+  ],
+  "meta": {
+    "status": "Tasks reviewed and prioritized by importance to immersion, gamification, and lore structure.",
+    "generated": "2025-06-12T20:04:59.028407"
+  }
+}

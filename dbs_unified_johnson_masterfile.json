@@ -1,0 +1,183 @@
+{
+  "title": "Dead Bastard Society \u2013 Unified System Johnson File",
+  "version": "June 2025",
+  "generated": "2025-06-12T20:06:56.964990",
+  "components": {
+    "user_profile_format": {
+      "title": "DBS User Profile Format",
+      "description": "Standardized JSON structure for user memory files.",
+      "structure": {
+        "user_id": "integer",
+        "username": "string",
+        "latin_name": "string",
+        "phonetic": "string",
+        "archetype": "string",
+        "rank": "integer",
+        "behavior_tags": [
+          "string"
+        ],
+        "geo": {
+          "state": "string",
+          "city": "string",
+          "strain_name": "string"
+        },
+        "scrolls_found": [
+          "string"
+        ],
+        "quests_completed": [
+          "string"
+        ],
+        "badges_earned": [
+          "string"
+        ],
+        "memory_notes": [
+          "string"
+        ],
+        "created": "2025-06-12T20:06:56.964990",
+        "updated": "2025-06-12T20:06:56.964990"
+      },
+      "little_bastards_ideas": [
+        "Add 'weed strain preference' field to profile",
+        "Add 'first flex memory' tag for nostalgia badges",
+        "Auto-generate a nickname from behavior tags"
+      ]
+    },
+    "deployment_instructions": {
+      "title": "DBS Deployment Instructions",
+      "description": "Step-by-step setup guide for deploying DBS system on WordPress.com Business Plan.",
+      "instructions": {
+        "theme_upload": "dead-bastard-society.zip",
+        "plugin_order": [
+          "lucidus-terminal-pro",
+          "lucidus-society-core",
+          "lucidus-transcriber-whisper",
+          "lucidus-voice-proxy-stream",
+          "dbs-memory-logger",
+          "dbs-openai-key-manager"
+        ],
+        "required_pages": [
+          {
+            "slug": "terminal",
+            "template": "page-lucidus-terminal.php"
+          },
+          {
+            "slug": "scrolls",
+            "template": "page-scroll-wall.php"
+          },
+          {
+            "slug": "join",
+            "template": "page-join.php"
+          },
+          {
+            "slug": "mirror",
+            "template": "page-member-mirror.php"
+          }
+        ],
+        "api_keys_required": [
+          "OpenAI",
+          "Whisper",
+          "ElevenLabs"
+        ],
+        "settings_to_check": [
+          "Permalinks = Post name",
+          "Uploads folder writable"
+        ]
+      },
+      "little_bastards_ideas": [
+        "Let Lucidus narrate the deployment steps aloud like a prophecy",
+        "Add a \u2018smoke test\u2019 that launches a random scroll post-deployment"
+      ]
+    },
+    "patch_registry": {
+      "title": "DBS Patch Registry",
+      "description": "Master index of all official patches and badge triggers.",
+      "patches": [
+        {
+          "id": "001",
+          "name": "I Ate a Cherry",
+          "trigger": "Entry to Brotherhood",
+          "badge_type": "initiation",
+          "date_introduced": "2025-01-01"
+        },
+        {
+          "id": "013",
+          "name": "Double Deuce",
+          "trigger": "Legendary bowel event",
+          "badge_type": "stunt",
+          "date_introduced": "2025-01-10"
+        },
+        {
+          "id": "040",
+          "name": "El Bestia del Puente",
+          "trigger": "Valatie Bridge Flex-Off",
+          "badge_type": "competition",
+          "date_introduced": "2025-03-22"
+        }
+      ],
+      "little_bastards_ideas": [
+        "Create a patch for anyone who rage-quits the chat then comes back",
+        "Add a secret patch that unlocks if Lucidus gets confused"
+      ]
+    },
+    "memory_injection_log": {
+      "title": "DBS Memory Injection Log",
+      "description": "Chronological log of memory file injections.",
+      "entries": [
+        {
+          "filename": "valatie_scroll.txt",
+          "type": "scroll",
+          "source": "admin",
+          "timestamp": "2025-06-12T20:06:56.964990",
+          "notes": "First bridge prophecy log"
+        },
+        {
+          "filename": "user_1289.json",
+          "type": "profile",
+          "source": "frontend-init",
+          "timestamp": "2025-06-12T20:06:56.964990",
+          "notes": "Auto-generated from initiation form"
+        }
+      ],
+      "little_bastards_ideas": [
+        "Allow members to inject a \u2018memory whisper\u2019 \u2013 short scroll of chaos",
+        "Mark memories with emoji tags based on tone (\ud83d\udd25, \ud83d\udca8, \ud83d\udc80)"
+      ]
+    },
+    "command_registry": {
+      "title": "DBS Command Registry",
+      "description": "List of Lucidus command tags and responses",
+      "commands": [
+        {
+          "command": "!DBSchar",
+          "description": "Display character bios and roles",
+          "scope": "frontend + admin",
+          "output": "Character profile popup"
+        },
+        {
+          "command": "!DBSscroll",
+          "description": "Open prophecy scroll based on user rank",
+          "scope": "frontend",
+          "output": "Scroll content + prophecy style"
+        },
+        {
+          "command": "!DBSbadges",
+          "description": "List earned or available patches",
+          "scope": "frontend",
+          "output": "Badge grid with descriptions"
+        },
+        {
+          "command": "!LucidusMemoryLive",
+          "description": "Show memory state of current interaction",
+          "scope": "admin only",
+          "output": "Display memory context log"
+        }
+      ],
+      "little_bastards_ideas": [
+        "Add !DBSsnack to suggest stoner munchies based on archetype",
+        "Add !rant to trigger a chaotic Nasty P-style outburst",
+        "Add !confess to log a Brotherhood-worthy mistake",
+        "Add !nextquest to preview the next unlockable quest"
+      ]
+    }
+  }
+}

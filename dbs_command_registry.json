@@ -1,0 +1,36 @@
+{
+  "title": "DBS Command Registry",
+  "description": "List of Lucidus command tags and responses",
+  "commands": [
+    {
+      "command": "!DBSchar",
+      "description": "Display character bios and roles",
+      "scope": "frontend + admin",
+      "output": "Character profile popup"
+    },
+    {
+      "command": "!DBSscroll",
+      "description": "Open prophecy scroll based on user rank",
+      "scope": "frontend",
+      "output": "Scroll content + prophecy style"
+    },
+    {
+      "command": "!DBSbadges",
+      "description": "List earned or available patches",
+      "scope": "frontend",
+      "output": "Badge grid with descriptions"
+    },
+    {
+      "command": "!LucidusMemoryLive",
+      "description": "Show memory state of current interaction",
+      "scope": "admin only",
+      "output": "Display memory context log"
+    }
+  ],
+  "little_bastards_ideas": [
+    "Add !DBSsnack to suggest stoner munchies based on archetype",
+    "Add !rant to trigger a chaotic Nasty P-style outburst",
+    "Add !confess to log a Brotherhood-worthy mistake",
+    "Add !nextquest to preview the next unlockable quest"
+  ]
+}

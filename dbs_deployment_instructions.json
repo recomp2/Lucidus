@@ -1,0 +1,46 @@
+{
+  "title": "DBS Deployment Instructions",
+  "description": "Step-by-step setup guide for deploying DBS system on WordPress.com Business Plan.",
+  "instructions": {
+    "theme_upload": "dead-bastard-society.zip",
+    "plugin_order": [
+      "lucidus-terminal-pro",
+      "lucidus-society-core",
+      "lucidus-transcriber-whisper",
+      "lucidus-voice-proxy-stream",
+      "dbs-memory-logger",
+      "dbs-openai-key-manager"
+    ],
+    "required_pages": [
+      {
+        "slug": "terminal",
+        "template": "page-lucidus-terminal.php"
+      },
+      {
+        "slug": "scrolls",
+        "template": "page-scroll-wall.php"
+      },
+      {
+        "slug": "join",
+        "template": "page-join.php"
+      },
+      {
+        "slug": "mirror",
+        "template": "page-member-mirror.php"
+      }
+    ],
+    "api_keys_required": [
+      "OpenAI",
+      "Whisper",
+      "ElevenLabs"
+    ],
+    "settings_to_check": [
+      "Permalinks = Post name",
+      "Uploads folder writable"
+    ]
+  },
+  "little_bastards_ideas": [
+    "Let Lucidus narrate the deployment steps aloud like a prophecy",
+    "Add a \u2018smoke test\u2019 that launches a random scroll post-deployment"
+  ]
+}

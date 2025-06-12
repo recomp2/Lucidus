@@ -1,0 +1,131 @@
+{
+  "title": "Dead Bastard Society \u2013 Master Johnson File",
+  "version": "June 2025",
+  "site": "deadbastardsociety.com",
+  "lucidus_version": "3.3 \u2192 4+ dev",
+  "ai": {
+    "name": "Lucidus Bastardus",
+    "model": "GPT-4o",
+    "roles": [
+      "Oracle",
+      "Prophet",
+      "Voice of Archives"
+    ],
+    "features": [
+      "Voice input (Whisper)",
+      "Voice output (TTS)",
+      "Memory store/load",
+      "Mood engine"
+    ]
+  },
+  "plugins": {
+    "lucidus-terminal-pro": {
+      "modules": [
+        "chat",
+        "mic",
+        "TTS",
+        "memory",
+        "Whisper",
+        "phrase forge"
+      ],
+      "paths": {
+        "frontend": "page-lucidus-terminal.php",
+        "scripts": [
+          "lucidus-chat.js",
+          "lucidus-sfx.js"
+        ]
+      }
+    },
+    "lucidus-core": "Memory + prophecy engine",
+    "lucidus-panel": "Admin panel UI + uploads",
+    "lucidus-voice-proxy-stream": "Audio playback + ElevenLabs",
+    "lucidus-transcriber-whisper": "Mic to Whisper transcribe",
+    "dbs-memory-logger": "Context logger: chat and injections",
+    "dbs-openai-key-manager": "Centralized key storage"
+  },
+  "theme": {
+    "name": "dead-bastard-society",
+    "templates": [
+      "page-lucidus-terminal.php",
+      "/scrolls",
+      "/join",
+      "/mirror"
+    ],
+    "style": [
+      "Dark UI",
+      "Parchment scrolls",
+      "Glow effects"
+    ]
+  },
+  "file_system": {
+    "root": "/wp-content/dbs-library/",
+    "subfolders": [
+      "memory-archive",
+      "scrolls-and-myths",
+      "patches",
+      "characters",
+      "canon",
+      "interactive",
+      "dbs-private"
+    ]
+  },
+  "rank_system": {
+    "ranks": [
+      "0: Initiate",
+      "1: Newbie Bastard",
+      "2: Initiated Bastard",
+      "3: Chronic Commander",
+      "4: Scoutmaster",
+      "5: Elder Bastard",
+      "6: Ascended Bastard"
+    ],
+    "logic": "Scroll reading, badge earning, quest fulfillment"
+  },
+  "quests": {
+    "example": "Fogwatcher's Trial",
+    "trigger": "Hudson, NY / Rank 0",
+    "objectives": [
+      "Submit prophecy",
+      "Find scroll",
+      "Invite member"
+    ],
+    "reward": {
+      "rank_boost": 1,
+      "tag": "Fogwatcher"
+    }
+  },
+  "badges": {
+    "examples": [
+      "#001 I Ate a Cherry",
+      "#013 Double Deuce",
+      "#039 Flex-or-Drown",
+      "#040 El Bestia del Puente"
+    ],
+    "earned_while": "stoned, drunk, or delirious"
+  },
+  "modules": {
+    "voice_input": true,
+    "voice_output": true,
+    "memory_system": true,
+    "mood_engine": "Alpha",
+    "scroll_unlock": "Planned",
+    "badge_tracker": "Planned",
+    "rank_engine": "Planned",
+    "quest_engine": true
+  },
+  "security": {
+    "compliance": "WordPress.com Business",
+    "keys_stored_in_plugin": true,
+    "safe_dirs": "/wp-content/",
+    "theme_folder": "dead-bastard-society",
+    "plugin_folder": "lucidus-terminal-pro"
+  },
+  "next_steps": [
+    "Scroll unlock system",
+    "Badge/rank engine",
+    "Member Mirror",
+    "Geo memory mapper",
+    "Custom Latin phrase system"
+  ],
+  "generated": "2025-06-12T20:02:33.125590"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "DBS User Profile Format",
+  "description": "Standardized JSON structure for user memory files.",
+  "structure": {
+    "user_id": "integer",
+    "username": "string",
+    "latin_name": "string",
+    "phonetic": "string",
+    "archetype": "string",
+    "rank": "integer",
+    "behavior_tags": [
+      "string"
+    ],
+    "geo": {
+      "state": "string",
+      "city": "string",
+      "strain_name": "string"
+    },
+    "scrolls_found": [
+      "string"
+    ],
+    "quests_completed": [
+      "string"
+    ],
+    "badges_earned": [
+      "string"
+    ],
+    "memory_notes": [
+      "string"
+    ],
+    "created": "2025-06-12T20:06:56.964990",
+    "updated": "2025-06-12T20:06:56.964990"
+  },
+  "little_bastards_ideas": [
+    "Add 'weed strain preference' field to profile",
+    "Add 'first flex memory' tag for nostalgia badges",
+    "Auto-generate a nickname from behavior tags"
+  ]
+}

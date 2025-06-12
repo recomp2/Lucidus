@@ -1,0 +1,31 @@
+{
+  "title": "DBS Patch Registry",
+  "description": "Master index of all official patches and badge triggers.",
+  "patches": [
+    {
+      "id": "001",
+      "name": "I Ate a Cherry",
+      "trigger": "Entry to Brotherhood",
+      "badge_type": "initiation",
+      "date_introduced": "2025-01-01"
+    },
+    {
+      "id": "013",
+      "name": "Double Deuce",
+      "trigger": "Legendary bowel event",
+      "badge_type": "stunt",
+      "date_introduced": "2025-01-10"
+    },
+    {
+      "id": "040",
+      "name": "El Bestia del Puente",
+      "trigger": "Valatie Bridge Flex-Off",
+      "badge_type": "competition",
+      "date_introduced": "2025-03-22"
+    }
+  ],
+  "little_bastards_ideas": [
+    "Create a patch for anyone who rage-quits the chat then comes back",
+    "Add a secret patch that unlocks if Lucidus gets confused"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "title": "Dead Bastard Society \u2013 Website Structure & Requirements",
+  "version": "June 2025",
+  "site": "deadbastardsociety.com",
+  "platform": "WordPress.com Business Plan",
+  "core_theme": {
+    "name": "dead-bastard-society",
+    "location": "/wp-content/themes/dead-bastard-society/",
+    "templates": [
+      "page-lucidus-terminal.php",
+      "page-scroll-wall.php",
+      "page-join.php",
+      "page-member-mirror.php",
+      "page-initiation.php"
+    ],
+    "design": {
+      "aesthetic": "Dark parchment + stoner chaos",
+      "features": [
+        "Voice toggle",
+        "TTS-ready",
+        "Scroll hover effects",
+        "Terminal chat styling"
+      ]
+    }
+  },
+  "core_plugins": [
+    "lucidus-terminal-pro",
+    "lucidus-society-core",
+    "dbs-memory-logger",
+    "dbs-openai-key-manager",
+    "lucidus-transcriber-whisper",
+    "lucidus-voice-proxy-stream"
+  ],
+  "plugin_behavior": {
+    "install_path": "/wp-content/plugins/",
+    "activation_order": [
+      "lucidus-terminal-pro",
+      "lucidus-society-core",
+      "lucidus-voice-proxy-stream"
+    ],
+    "requirements": {
+      "PHP": "8.0+",
+      "Memory Limit": "512M",
+      "Uploads Dir": "Writable",
+      "cURL": "Enabled",
+      "SSL": "Required"
+    }
+  },
+  "admin_tools": [
+    "Lucidus Chat Terminal (admin-only)",
+    "Voice Toggle Settings",
+    "Memory Live Viewer",
+    "File Uploader",
+    "Phrase Forge",
+    "Diagnostics Panel"
+  ],
+  "frontend_features": [
+    "Lucidus Terminal Chat (public)",
+    "Mic input + TTS voice output",
+    "Initiation form (ranks, archetype, geo)",
+    "Scroll Wall (rank unlock logic)",
+    "Quest system with badge triggers"
+  ],
+  "memory_structure": {
+    "path": "/wp-content/dbs-library/memory-archive/",
+    "formats": [
+      "JSON",
+      "TXT"
+    ],
+    "subfolders": [
+      "profiles/{user}.json",
+      "geo/{state}/{city}.json",
+      "quests/{region}.json",
+      "scrolls/*.json",
+      "system.json"
+    ],
+    "management": "File browser UI in admin, auto-injection enabled"
+  },
+  "scripts_and_assets": {
+    "JS": [
+      "lucidus-chat.js",
+      "lucidus-sfx.js",
+      "lucidus-stream-audio.js",
+      "voice model selector",
+      "GPT fetch logic",
+      "Whisper integration"
+    ],
+    "CSS": [
+      "lucidus-chat.css"
+    ],
+    "Audio": [
+      "ambience-warp.mp3"
+    ]
+  },
+  "security_policies": {
+    "safe_dirs": [
+      "wp-content/uploads",
+      "wp-content/dbs-library/"
+    ],
+    "no_raw_php": true,
+    "API_keys": "Stored via settings plugin",
+    "user_roles": "Capability checked (current_user_can)"
+  },
+  "deployment_rules": {
+    "plugin_folder_name": "lucidus-terminal-pro",
+    "theme_folder_name": "dead-bastard-society",
+    "zip_update": "Always versioned externally, but folder name must remain consistent",
+    "upload_paths": {
+      "plugins": "Plugins > Upload Plugin",
+      "theme": "Appearance > Themes > Upload"
+    }
+  },
+  "next_features_planned": [
+    "Scroll passphrase unlock system",
+    "Geo map visualization with county morph logic",
+    "User memory editor",
+    "Voice memory recap",
+    "External web search terminal"
+  ],
+  "generated": "2025-06-12T20:04:03.763724"
+}

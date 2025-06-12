@@ -5,4 +5,3 @@ Flamepatch v1.0
 - Escaped dynamic output in footer
 - Guarded template files and membership map page
 - Logged patched files in patch-log.json
-- Wrapped shortcode registration in init hooks and added security guards

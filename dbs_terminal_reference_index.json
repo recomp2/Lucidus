@@ -1,0 +1,86 @@
+{
+  "existing_files": [
+    "Lucidus_Advanced_Instructions.json",
+    "dbs_full_project_concept.json",
+    "dead bastard Society.docx",
+    "DBS_Master_Skit_Tracker.docx",
+    "DBS_Project_Codex_v1_RAW.docx",
+    "DBS     server_info_report.docx",
+    "DBS_Master_Backup_File.docx",
+    "DBS_Patch_Codex_Vol_1.docx",
+    "dbs_gpt_instructions.docx",
+    "Dead Bastard Society Latin Stoner Wisdom & Slang Lexicon.docx",
+    "dbs_master_plan.docx",
+    "dbs_master_plan.json",
+    "project_progress_report.json",
+    "Epic_Johnson_Automation.json",
+    "lucidus-chat-scripts.json",
+    "dbs_system_johnson_log.txt",
+    "dbs_system_memory_status.json",
+    "lucidus-terminal-memory.json",
+    "dbs-universe-concept-v2-updated.json",
+    "plugin directory.zip",
+    "151173021.sql"
+  ],
+  "file_tasks": {
+    "plugin directory.zip": "Unpacked, audit complete. Core functions found. Must migrate logic into modular script system and rebuild complete plugin structure.",
+    "151173021.sql": "Used to verify structure of wp_users, wp_usermeta, and custom table logic. Confirmed town, rank, and gospel support.",
+    "lucidus-terminal-memory.json": "Contains valuable AI memory references. Integrate into memory archive under /memory-archive/profiles/",
+    "lucidus-chat-scripts.json": "Useful for populating the GPT prompt system. Convert into modular /scripts/chat/ modules or inject into scroll logic.",
+    "dbs_system_johnson_log.txt": "Operational log, use to check for missing systems or untriggered events.",
+    "lucidus-*.json": "Key instruction files. Validate they are reflected in canon structure or prompt base.",
+    "Dead Bastard Society Latin Stoner Wisdom & Slang Lexicon.docx": "Ingest into /canon/latin.json for the Latinizer system.",
+    "DBS_Project_Codex_v1_RAW.docx": "Use as foundation for canon entries, badges, archetypes, and map system."
+  },
+  "dbs_directory_structure": {
+    "/wp-content/": {
+      "dbs-library/": {
+        "scripts/": [
+          "prophecy/",
+          "badges/",
+          "rank/",
+          "triggers/",
+          "town/",
+          "map/",
+          "gospel/",
+          "media/"
+        ],
+        "memory-archive/": {
+          "profiles/": [],
+          "geo/": [],
+          "scrolls/": [
+            "active-scroll.json",
+            "archive/"
+          ],
+          "ledger/": [],
+          "canon/": [
+            "dbs-gospel.json",
+            "user-gospels/",
+            "latin.json"
+          ],
+          "logs/": [],
+          "backups/": [],
+          "seeds/": []
+        },
+        "assets/": [
+          "audio/",
+          "images/",
+          "poster-templates/"
+        ]
+      },
+      "uploads/dbs-uploads/": [
+        "member-images/",
+        "voice/"
+      ]
+    },
+    "/wp-content/plugins/": [
+      "lucidus-key-core/",
+      "lucidus-terminal-core/"
+    ]
+  },
+  "generated_on": "2025-06-09",
+  "update_guidance": {
+    "check_archive_chats": "Review past chat logs or plugin commits for new instructions or logic that hasn't been pulled into scripts or memory.",
+    "recommendation": "Every plugin or script update should begin by checking the master plan JSON, the DBS reference index, and the latest conversation logs or changelog entries in /logs/ or /dbs-terminal-memory.json."
+  }
+}

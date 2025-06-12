@@ -1,0 +1,126 @@
+{
+  "title": "Dead Bastard Society \u2013 Community Concept Johnson File",
+  "version": "June 2025",
+  "site": "deadbastardsociety.com",
+  "core_concept": "An AI-powered, lore-driven stoner society with mythological archetypes, rank-based membership, scrolls, quests, and prophetic cannabis culture.",
+  "primary_ai": {
+    "name": "Lucidus Bastardus",
+    "roles": [
+      "Oracle",
+      "Voice of Archives",
+      "Brotherhood Guide"
+    ],
+    "functions": [
+      "Chat + Memory Recall",
+      "Voice Interaction",
+      "Quest Assignment",
+      "Prophecy Generation",
+      "Scroll Unlocks",
+      "Archetype Recognition"
+    ]
+  },
+  "membership_system": {
+    "ranks": [
+      "0: Initiate",
+      "1: Newbie Bastard",
+      "2: Initiated Bastard",
+      "3: Chronic Commander",
+      "4: Scoutmaster",
+      "5: Elder Bastard",
+      "6: Ascended Bastard"
+    ],
+    "profile_data": [
+      "Latin Username + Phonetics",
+      "Archetype Alignment (Dub, Randall, Nasty P)",
+      "Geographic Tag",
+      "Behavior Tags",
+      "Rank Progress",
+      "Scroll Discovery"
+    ],
+    "registration_features": [
+      "DBS Initiation Form",
+      "Rank-Based Redirects",
+      "Town Claiming & Strain Naming",
+      "User Memory File Creation"
+    ]
+  },
+  "frontend_components": [
+    "Lucidus Terminal (chat + voice)",
+    "Scroll Wall (rank-based unlocks)",
+    "Member Mirror (profile reflection)",
+    "Comic Viewer",
+    "Patch Display System"
+  ],
+  "backend_components": [
+    "Lucidus Terminal Pro Admin Plugin",
+    "Memory Manager",
+    "Voice Log Panel",
+    "Phrase Forge",
+    "File Uploader + Archive Sync",
+    "Diagnostics + GPT Integrator"
+  ],
+  "geo_expansion": {
+    "logic": "Towns and counties added dynamically as members join",
+    "starting_point": "Columbiaville, NY (Chapter 23)",
+    "map_behavior": "County nodes form a cartoon map, morph spatially with new members"
+  },
+  "scroll_and_quest_engine": {
+    "scrolls": "Stored per user + global wall",
+    "quests": "Triggered by location, rank, or archetype",
+    "reward": [
+      "Tags",
+      "Badges",
+      "Rank Boosts",
+      "Lore Unlocks"
+    ]
+  },
+  "patches_and_badges": {
+    "universe_logic": "Earned via chaos, stunts, scrolls, or submission",
+    "sample_badges": [
+      "I Ate a Cherry",
+      "Toilet Slayer",
+      "El Bestia del Puente",
+      "Flex-or-Drown"
+    ],
+    "coin_rewards": [
+      "Flex Coin",
+      "Muffin Coin",
+      "Pit Coin"
+    ]
+  },
+  "archetypes": {
+    "Dub": {
+      "tone": "Mystical",
+      "element": "Air"
+    },
+    "Randall": {
+      "tone": "Paranoid Genius",
+      "element": "Fire"
+    },
+    "Nasty P": {
+      "tone": "Bold Chaos",
+      "element": "Earth"
+    }
+  },
+  "content_system": {
+    "types": [
+      "Scrolls",
+      "Badges",
+      "Profiles",
+      "Comics",
+      "Quests",
+      "Latin Lexicon"
+    ],
+    "archive_structure": "/wp-content/dbs-library/",
+    "memory": "Stored in JSON/TXT, loaded into GPT context"
+  },
+  "expansion_goals": [
+    "Global town claiming system",
+    "Mobile version of Lucidus Terminal",
+    "Public scroll reader",
+    "Rank-based shop access",
+    "Member-exclusive prophecy builder"
+  ],
+  "vision_statement": "A living, expanding society of chaotic prophets who flex, smoke, remember, and mock the world \u2014 powered by cannabis, myth, AI, and Brotherhood.",
+  "generated": "2025-06-12T20:03:13.191248"
+}

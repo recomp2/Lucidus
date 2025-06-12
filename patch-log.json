@@ -9,23 +9,6 @@
     "plugin-terminal/modules/tier-access/admin-tier-settings.php",
     "theme/dead-bastard-society-theme/footer.php",
     "theme/dead-bastard-society-theme/page-membership-map.php",
-    "theme/dead-bastard-society-theme/template-lucidus-prophecy.php",
-    "plugin-members/dbs-members-plugin/includes/shortcodes.php",
-    "plugin-members/dbs-members-plugin/includes/map.php",
-    "plugin-terminal/lucidus-terminal-pro/includes/admin-menu.php",
-    "plugin-terminal/modules/module-admin-interface.php",
-    "plugin-terminal/modules/module-manager.php",
-    "plugin-terminal/modules/tier-access/tier-access-init.php",
-    "theme/dead-bastard-society-theme/functions.php",
-    "theme/dead-bastard-society-theme/page-lucidus-chat.php",
-    "theme/dead-bastard-society-theme/page-lucidus-profile.php",
-    "theme/dead-bastard-society-theme/page-lucidus-archive.php",
-    "theme/dead-bastard-society-theme/page-lucidus-chapters.php",
-    "theme/dead-bastard-society-theme/page-420-scrollfeed.php",
-    "theme/dead-bastard-society-theme/page-lucidus-settings.php",
-    "theme/dead-bastard-society-theme/index.php",
-    "theme/dead-bastard-society-theme/header.php",
-    "plugin-members/dbs-members-plugin/dbs-members-plugin.php",
-    "plugin-terminal/lucidus-terminal-pro/lucidus-terminal-pro.php"
+    "theme/dead-bastard-society-theme/template-lucidus-prophecy.php"
   ]
 }
