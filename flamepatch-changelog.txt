@@ -1,0 +1,8 @@
+Flamepatch v1.0
+===============
+- Added ABSPATH guards and closing PHP tags across modules and templates
+- Introduced module headers for template and prophecy expansion modules
+- Escaped dynamic output in footer
+- Guarded template files and membership map page
+- Logged patched files in patch-log.json
+- Wrapped shortcode registration in init hooks and added security guards
