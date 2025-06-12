@@ -8,18 +8,21 @@ The Lucidus plugin is the AI-powered command center of the **Dead Bastard Societ
 - Voice input/output (OpenAI + ElevenLabs)
 - Memory injection + archive tools
 - File browser + diagnostics
-- Scroll-unlock engine (coming soon)
+- Scroll-unlock engine
+- Custom post types for badges, patches and scrolls
+- Quest system with rank progression
 - Full DBS universe integration
 
 ## 📁 Directory Structure
+```
 lucidus-terminal-pro/
-├── admin/
-├── assets/
-├── core/
-├── templates/
 ├── lucidus-terminal.php
-├── readme.txt
+├── templates/
+│   ├── single-badge.php
+│   ├── single-patch.php
+│   └── single-scroll.php
 └── README.md
+```
 
 ## 🧠 Project Philosophy
 
@@ -38,6 +41,5 @@ This project is licensed under the MIT License.
 
 ## 🧔 Built By
 
-Dr.G and Lucidus Bastardo  
+Dr.G and Lucidus Bastardo
 _“Let the smoke speak.”_
-
