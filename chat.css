@@ -1,0 +1,22 @@
+#lucidus-terminal {
+    background:#000;
+    padding:20px;
+    color:#0f0;
+}
+#lucidus-terminal #chat-window {
+    height:300px;
+    overflow-y:auto;
+    background:#111;
+    padding:10px;
+    margin-bottom:10px;
+}
+#lucidus-terminal .user {color:#0ff;}
+#lucidus-terminal .bot {color:#ff0;}
+#lucidus-terminal .system {color:#8f8; font-style:italic;}
+
+#prophecy-feed {
+    background:#111;
+    padding:10px;
+    color:#0f0;
+    overflow-y:auto;
+}
