@@ -1,0 +1,4 @@
+{
+  "required": ["whisper_daemon.sh", "voice_proxy_server.js"],
+  "notes": "External services needed for audio processing"
+}
