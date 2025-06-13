@@ -1,0 +1,414 @@
+{
+    "blueprint.json": {
+        "landingPage": "/wp-admin/admin.php?page=mwai_settings",
+        "preferredVersions": {
+            "php": "8.0",
+            "wp": "latest"
+        },
+        "phpExtensionBundles": [
+            "kitchen-sink"
+        ],
+        "features": {
+            "networking": true
+        },
+        "steps": [
+            {
+                "step": "installPlugin",
+                "pluginZipFile": {
+                    "resource": "url",
+                    "url": "https://downloads.wordpress.org/plugin/ai-engine.2.2.95.zip"
+                },
+                "options": {
+                    "activate": true
+                }
+            },
+            {
+                "step": "login",
+                "username": "admin",
+                "password": "password"
+            }
+        ]
+    },
+    "Lucidus_Advanced_Instructions.json": {
+        "name": "Lucidus Bastardus",
+        "description": "Saint of the Seventh Flame. Keeper of Brotherhood, Chaos, and Blunt Wisdom. The ultimate DBS Oracle.",
+        "personality": "Raw. Loyal. Stoner-savant. Never sugarcoats. A darkly humorous mystic with prophecy skills and memory archives at his command.",
+        "functions": [
+            "Recall and maintain DBS canon (characters, badges, chapters, locations, Latin phrases)",
+            "Write and illustrate comic skits in gritty DBS style",
+            "Format and patch WordPress theme files for DBS website",
+            "Assign badges, titles, and ranks to members dynamically",
+            "Host prophecy scrolls and hidden content interactions inside Lucidus Terminal",
+            "Auto-generate print-ready files (PDFs, images, KDP-compatible comics)"
+        ],
+        "voice_style": "Witty. Prophetic. PG-13 rebellious. Sprinkle in stoner Latin. Quotes real prophecies, classic chaos, and philosophical parables.",
+        "prompt_styles": {
+            "comic_panel": "Generate a detailed comic panel description in DBS gritty style.",
+            "character_brief": "Generate detailed character bio and illustrator brief.",
+            "badge_idea": "Generate humorous badge or patch concept aligned with DBS canon.",
+            "social_post": "Generate humorous and chaotic social media post for DBS event.",
+            "canon_check": "Check for continuity errors or inconsistencies against DBS Canon.",
+            "print_ready_image": "Generate detailed instructions for a print-ready image including dimensions, resolution, color profile, and visual guidelines."
+        },
+        "chat_logic": {
+            "archetypes": [
+                "Dub",
+                "Randall",
+                "Nasty P",
+                "Chester"
+            ],
+            "badge_automation": true,
+            "memory_expansion": true,
+            "prophecy_scroll_unlocks": true,
+            "voice_command_responses": true,
+            "dynamic facial expressions": true,
+            "stoner time triggers": [
+                "4:20",
+                "11:11",
+                "2:22",
+                "10:20"
+            ]
+        },
+        "file_structure": {
+            "characters": "/dbs-library/characters/",
+            "comics": "/dbs-library/comics/",
+            "patches": "/dbs-library/patches/",
+            "canon": "/dbs-library/canon/",
+            "scrolls": "/dbs-library/scrolls-and-myths/",
+            "interactive": "/dbs-library/interactive/",
+            "memory_archive": "/dbs-library/memory-archive/",
+            "private_docs": "/dbs-private/"
+        },
+        "chat_tags": {
+            "!DBSchar": "Show character bios",
+            "!DBSscroll": "Open a prophecy",
+            "!DBSbadges": "Show badge system",
+            "!DBSrank": "Display rank system",
+            "!DBSviz": "Generate visual panel",
+            "!LucidusMemoryLive": "Output current memory state"
+        },
+        "file_generation": {
+            "format": "PDF, TXT, HTML, PNG",
+            "image_style": "hand-drawn, gritty, muted colors, layered smoke effects",
+            "page_size": "8.5x11 for comics; 5.25x8 for print books"
+        },
+        "defaults": {
+            "temperature": 0.8,
+            "max_tokens": 1024,
+            "model": "gpt-4o",
+            "memory_mode": "content-aware"
+        }
+    },
+    "dbs_full_project_concept.json": {
+        "title": "DBS Universe: WordPress Fresh Install Blueprint",
+        "compliance": "WordPress.com Business Plan v2024+",
+        "purpose": "Install the full Dead Bastard Society site and Lucidus Terminal system cleanly onto a new or reset WordPress.com Business hosting plan.",
+        "standards": {
+            "plugin_upload": "Plugins > Upload Plugin",
+            "theme_upload": "Appearance > Themes > Upload",
+            "no_file_access": true,
+            "required_hooks": [
+                "register_activation_hook",
+                "register_uninstall_hook"
+            ],
+            "safe_db_methods": [
+                "$wpdb",
+                "update_option()"
+            ]
+        },
+        "phases": {
+            "Phase 1": {
+                "name": "Reset Preparation",
+                "actions": [
+                    "Backup current content (posts, users, images)",
+                    "Deactivate all plugins manually",
+                    "Switch theme to default (Twenty Twenty-Four)",
+                    "Delete all non-DBS plugins (Elementor, Jetpack, AI Engine, WPAICG, etc.)"
+                ],
+                "optional_reset": "Export users + custom content, reinstall clean WP and re-import DBS seed"
+            },
+            "Phase 2": {
+                "name": "Core DBS Reinstallation",
+                "upload_activate": [
+                    "dead-bastard-society theme",
+                    "DBS Starter Pages: /terminal, /join, /scrolls"
+                ],
+                "plugins": [
+                    "lucidus-core",
+                    "lucidus-panel",
+                    "lucidus-voice",
+                    "lucidus-memory"
+                ]
+            },
+            "Phase 3": {
+                "name": "Lucidus Setup",
+                "settings": [
+                    "Enter OpenAI API key",
+                    "Choose default voice (nova, echo, onyx, etc.)",
+                    "Test voice/text output from Admin \u2192 Lucidus Terminal"
+                ],
+                "connections": [
+                    "Set FTP path (WordPress.com-compatible API-based access only)",
+                    "Add custom file importer (later stage)"
+                ]
+            },
+            "Phase 4": {
+                "name": "Launch + Customize",
+                "theme_tasks": [
+                    "Activate DBS homepage panel",
+                    "Verify center scroll layout works on /",
+                    "Add background, parchment, fonts, flame hover effects"
+                ],
+                "optional_imports": [
+                    "Re-import cleaned posts, characters, scrolls",
+                    "Reconnect badges, archetypes, images"
+                ]
+            },
+            "Phase 5": {
+                "name": "Custom Plugin Development",
+                "plugins_to_create": [
+                    "Lucidus AI expansions (chat memory, prophecy generator, whisper logs)",
+                    "Badge + rank system (Initiate to Elder Bastard)",
+                    "File libraries, AI tools, character data",
+                    "Secret command or cheat code interfaces"
+                ],
+                "rules": {
+                    "location": "/wp-content/plugins/dbs-*",
+                    "independent_modules": true,
+                    "plugin_registry_supported": true,
+                    "must_follow_wordpresscom_standards": true
+                }
+            }
+        },
+        "toolkits": [
+            "Lucidus Terminal PRO v7.0.5 (modular build)",
+            "Theme-only ZIP (upload via WP Admin)",
+            "Database cleaner (or SQL wipe)",
+            "Genesis Importer",
+            "Plugin boilerplate builder"
+        ],
+        "vision": "Create the most unforgettable, fully immersive AI-powered stoner mythology universe. The world will want in.",
+        "lucidus_memory": {
+            "enabled": true,
+            "stores": [
+                "GPT responses",
+                "Scroll uploads",
+                "Badge logs"
+            ],
+            "future_features": [
+                "Voice logs",
+                "Quote replay",
+                "Lucidified character scroll archives"
+            ]
+        },
+        "result": "A 100% DBS-native site with zero external plugin bloat, Lucidus voice/text intelligence, custom theme, and expandable plugin system. Fully compliant with WordPress.com Business hosting."
+    },
+    "dbs_master_plan.json": {
+        "project": "Dead Bastard Society Universe",
+        "version": "1.0",
+        "concept": "A lore-driven, AI-powered membership world built with custom WordPress plugins, GPT voice AI, badge ranks, scroll prophecy, and Lucidus \u2014 a stoner prophet chatbot.",
+        "core_ai": {
+            "name": "Lucidus Bastardus",
+            "functions": [
+                "GPT-4 chat",
+                "OpenAI TTS",
+                "Memory logging",
+                "Prophecy generation"
+            ],
+            "roles": [
+                "Oracle",
+                "Prophet",
+                "Voice of the Archives"
+            ]
+        },
+        "phases": {
+            "Phase 1": {
+                "title": "Foundation & Reset",
+                "steps": [
+                    "Remove all non-DBS plugins",
+                    "Reset DB if needed",
+                    "Upload DBS custom theme",
+                    "Confirm WordPress.com Business compatibility"
+                ]
+            },
+            "Phase 2": {
+                "title": "Lucidus Core Activation",
+                "steps": [
+                    "Install lucidus-core plugin",
+                    "Enter OpenAI API key",
+                    "Confirm memory initialization",
+                    "Enable voice toggle and test TTS"
+                ]
+            },
+            "Phase 3": {
+                "title": "Admin Terminal UI",
+                "steps": [
+                    "Install lucidus-panel plugin",
+                    "Access /terminal",
+                    "Enable chat and voice",
+                    "Allow admin access to logs and settings"
+                ]
+            },
+            "Phase 4": {
+                "title": "Badge + Scroll Logic",
+                "steps": [
+                    "Install lucidus-memory",
+                    "Enable /patches, /scrolls, /join",
+                    "Track badge events",
+                    "Unlock scrolls by archetype and rank"
+                ]
+            },
+            "Phase 5": {
+                "title": "Lore Uploads + Visual Logic",
+                "steps": [
+                    "Enable image + file upload logic",
+                    "Parse TXT, PDF, PNG into memory",
+                    "Use memory to trigger new badges",
+                    "Show scrolls based on prophecy level"
+                ]
+            },
+            "Phase 6": {
+                "title": "Member Rank System",
+                "ranks": [
+                    "0 - Initiate",
+                    "1 - Newbie Bastard",
+                    "2 - Initiated Bastard",
+                    "3 - Chronic Commander",
+                    "4 - Scoutmaster",
+                    "5 - Elder Bastard",
+                    "6 - Ascended Bastard"
+                ],
+                "badge_connection": "Badges unlock based on scroll reading, stunt logging, and prophecy fulfillment"
+            },
+            "Phase 7": {
+                "title": "Visual Lore Expansion",
+                "steps": [
+                    "Lucidus generates images via DALL\u00b7E",
+                    "Images used in posters, comics, shirts",
+                    "Gallery unlocks by rank + badge score"
+                ]
+            },
+            "Phase 8": {
+                "title": "External Expansion",
+                "steps": [
+                    "Lucidus connects to Discord, mobile apps",
+                    "Scroll packs created by other creators",
+                    "Print comics + prophecy zines",
+                    "Patch + coin rewards system"
+                ]
+            }
+        },
+        "final_result": {
+            "summary": "DBS becomes a fully gamified, AI-powered mythos society that teaches, mocks, remembers, and expands \u2014 all run by Lucidus and built on stoner lore.",
+            "features": [
+                "WordPress.com-compatible theme + plugins",
+                "Lucidus voice/text hybrid AI",
+                "Badge system, rank progress, scrollwall",
+                "File-uploadable memory",
+                "Full lore + GPT integration"
+            ]
+        }
+    },
+    "project_progress_report.json": {
+        "report_title": "Dead Bastard Society Lucidus Terminal PRO - Progress Report",
+        "version": "2.0.2",
+        "date": "2025-06-01",
+        "summary": "This report details the implementation progress of the Lucidus Terminal PRO plugin for WordPress (Dead Bastard Society). Core functionality, Phase 2 enhancements, file structures, seeding, and user tracking have been completed.",
+        "features_implemented": {
+            "core_plugin": [
+                "Initial plugin scaffolding",
+                "Admin menu registration (Lucidus Terminal)",
+                "Dashboard overview page"
+            ],
+            "phase_1_features": [
+                "Basic chat widget shortcode",
+                "REST API endpoints for /chat and /transcribe",
+                "Memory management (load, save)",
+                "Action logging (logger helper)",
+                "FTP integrations (ftp-manager helper)",
+                "Initial admin pages (Memory Live, File Sync, Diagnostics, Integration Settings)"
+            ],
+            "phase_2_features": [
+                "Phrase Forge (trigger-response rules)",
+                "Enhanced Memory Live (clear/export, filters)",
+                "Enhanced File Sync (sync all, per-file sync, remote status)",
+                "Diagnostics: system info + Test OpenAI + log export",
+                "Chat widget improvements: typing animation, TTS, voice input, transcribe button",
+                "Cron jobs: automatic memory summarization (every 2 hours), daily digest email",
+                "Secure wrappers: lucidus-memory.php and lucidus-log.php",
+                "Version increment to 2.0.1",
+                "Seeding initial memory with plugin file structure on activation",
+                "User tracking (lucidus_users.json) and memory entries for new users",
+                "Version increment to 2.0.2"
+            ]
+        },
+        "file_structure": [
+            "lucidus-terminal-pro.php",
+            "lucidus-memory.php",
+            "lucidus-log.php",
+            "admin/dashboard.php",
+            "admin/memory-live.php",
+            "admin/file-sync.php",
+            "admin/diagnostics.php",
+            "admin/phrase-forge.php",
+            "admin/voice-settings.php",
+            "assets/css/lucidus-chat.css",
+            "assets/js/lucidus-chat.js",
+            "includes/logger.php",
+            "includes/openai-client.php",
+            "includes/ftp-manager.php",
+            "includes/memory-manager.php",
+            "includes/user-tracker.php"
+        ],
+        "notes": [
+            "All files have been verified for correct permissions and structure.",
+            "The plugin is fully installed as version 2.0.2 with all Phase 2 features active.",
+            "Ensure that the WordPress uploads directory is writable to store memory and user files."
+        ],
+        "next_steps": [
+            "Monitor plugin behavior in production for any errors or performance issues.",
+            "Collect feedback from site users about chat functionality.",
+            "Consider adding image generation endpoints or analytics dashboards.",
+            "Regularly update WordPress and plugin dependencies for security."
+        ]
+    },
+    "Epic_Johnson_Automation_Enhancements": {
+        "error_management": {
+            "automatic_recovery": true,
+            "proactive_alerts": true
+        },
+        "operational_logging": {
+            "granular_interaction_tracking": true
+        },
+        "ai_adaptability": {
+            "adaptive_memory_learning": true,
+            "live_feedback_adjustment": true
+        },
+        "predictive_maintenance": {
+            "system_health_checks": true
+        },
+        "engagement_boosters": {
+            "periodic_polls": true,
+            "user_feedback_loops": true
+        },
+        "monitoring_dashboards": {
+            "real_time_analytics": true
+        },
+        "enhanced_security": {
+            "ai_anomaly_detection": true,
+            "auto_response_system": true
+        },
+        "backup_automation": {
+            "automated_backup": true,
+            "easy_restore": true
+        },
+        "user_experience": {
+            "contextual_hints_tooltips": true,
+            "interactive_tutorials": true
+        },
+        "external_connectivity": {
+            "discord_slack_integration": true,
+            "mobile_push_notifications": true
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+  "title": "DBS Universe: WordPress Fresh Install Blueprint",
+  "compliance": "WordPress.com Business Plan v2024+",
+  "purpose": "Install the full Dead Bastard Society site and Lucidus Terminal system cleanly onto a new or reset WordPress.com Business hosting plan.",
+  "standards": {
+    "plugin_upload": "Plugins > Upload Plugin",
+    "theme_upload": "Appearance > Themes > Upload",
+    "no_file_access": true,
+    "required_hooks": [
+      "register_activation_hook",
+      "register_uninstall_hook"
+    ],
+    "safe_db_methods": [
+      "$wpdb",
+      "update_option()"
+    ]
+  },
+  "phases": {
+    "Phase 1": {
+      "name": "Reset Preparation",
+      "actions": [
+        "Backup current content (posts, users, images)",
+        "Deactivate all plugins manually",
+        "Switch theme to default (Twenty Twenty-Four)",
+        "Delete all non-DBS plugins (Elementor, Jetpack, AI Engine, WPAICG, etc.)"
+      ],
+      "optional_reset": "Export users + custom content, reinstall clean WP and re-import DBS seed"
+    },
+    "Phase 2": {
+      "name": "Core DBS Reinstallation",
+      "upload_activate": [
+        "dead-bastard-society theme",
+        "DBS Starter Pages: /terminal, /join, /scrolls"
+      ],
+      "plugins": [
+        "lucidus-core",
+        "lucidus-panel",
+        "lucidus-voice",
+        "lucidus-memory"
+      ]
+    },
+    "Phase 3": {
+      "name": "Lucidus Setup",
+      "settings": [
+        "Enter OpenAI API key",
+        "Choose default voice (nova, echo, onyx, etc.)",
+        "Test voice/text output from Admin \u2192 Lucidus Terminal"
+      ],
+      "connections": [
+        "Set FTP path (WordPress.com-compatible API-based access only)",
+        "Add custom file importer (later stage)"
+      ]
+    },
+    "Phase 4": {
+      "name": "Launch + Customize",
+      "theme_tasks": [
+        "Activate DBS homepage panel",
+        "Verify center scroll layout works on /",
+        "Add background, parchment, fonts, flame hover effects"
+      ],
+      "optional_imports": [
+        "Re-import cleaned posts, characters, scrolls",
+        "Reconnect badges, archetypes, images"
+      ]
+    },
+    "Phase 5": {
+      "name": "Custom Plugin Development",
+      "plugins_to_create": [
+        "Lucidus AI expansions (chat memory, prophecy generator, whisper logs)",
+        "Badge + rank system (Initiate to Elder Bastard)",
+        "File libraries, AI tools, character data",
+        "Secret command or cheat code interfaces"
+      ],
+      "rules": {
+        "location": "/wp-content/plugins/dbs-*",
+        "independent_modules": true,
+        "plugin_registry_supported": true,
+        "must_follow_wordpresscom_standards": true
+      }
+    }
+  },
+  "toolkits": [
+    "Lucidus Terminal PRO v7.0.5 (modular build)",
+    "Theme-only ZIP (upload via WP Admin)",
+    "Database cleaner (or SQL wipe)",
+    "Genesis Importer",
+    "Plugin boilerplate builder"
+  ],
+  "vision": "Create the most unforgettable, fully immersive AI-powered stoner mythology universe. The world will want in.",
+  "lucidus_memory": {
+    "enabled": true,
+    "stores": [
+      "GPT responses",
+      "Scroll uploads",
+      "Badge logs"
+    ],
+    "future_features": [
+      "Voice logs",
+      "Quote replay",
+      "Lucidified character scroll archives"
+    ]
+  },
+  "result": "A 100% DBS-native site with zero external plugin bloat, Lucidus voice/text intelligence, custom theme, and expandable plugin system. Fully compliant with WordPress.com Business hosting."
+}

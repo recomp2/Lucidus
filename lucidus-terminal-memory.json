@@ -1,0 +1,50 @@
+{
+  "project": "Lucidus Terminal",
+  "status": "Voice/Text Toggle System Finalized",
+  "features": {
+    "input_modes": {
+      "text_input": "Enabled by default. Lucidus replies in text.",
+      "voice_input": "Enabled by toggling '\ud83e\udde0 Lucidus Speaks'. Uses Whisper transcription and ElevenLabs TTS."
+    },
+    "audio_system": {
+      "proxy_streaming": true,
+      "playback_module": "lucidus-stream-audio.js",
+      "voice_toggle": "Controls microphone + disables text output when enabled."
+    },
+    "interface": {
+      "single chat panel": true,
+      "removed_buttons": [
+        "micBtn"
+      ],
+      "toggle_button": "lucidus-toggle-mode",
+      "chat_log_id": "lucidus-chat-log"
+    },
+    "js_files": [
+      "lucidus-chat-engine-live.js",
+      "lucidus-stream-audio.js",
+      "lucidus-sfx.js"
+    ],
+    "php_template": "page-lucidus-terminal.php (final voice toggle version)",
+    "audio_theme": {
+      "ambient_file": "ambience-warp.mp3",
+      "ambient_control": "LucidusFX.toggle()"
+    }
+  },
+  "deployment": {
+    "plugin_js_path": "/wp-content/plugins/lucidus-terminal-pro/assets/js/",
+    "theme_template_path": "/wp-content/themes/dead-bastard-society/page-lucidus-terminal.php",
+    "audio_path": "/wp-content/themes/dead-bastard-society/lucidus-terminal/ambience-warp.mp3"
+  },
+  "status_notes": [
+    "Legacy JS files removed or ignored.",
+    "Text/voice logic streamlined into single button.",
+    "Confirmed DOM safety and live voice response.",
+    "Toggle remembers state within session but not persistently."
+  ],
+  "next_steps": [
+    "Scroll unlock based on voice passphrases",
+    "Memory system injection or session state tracking",
+    "Rank-based voice personalization",
+    "Add animated indicators for voice mode activation"
+  ]
+}

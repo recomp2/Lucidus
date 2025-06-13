@@ -1,0 +1,44 @@
+{
+  "generated": "2025-06-05T00:20:41.106664",
+  "lucidus_terminal_version": "3.3",
+  "features": {
+    "admin_panel": true,
+    "live_chat": true,
+    "voice_playback": true,
+    "mic_input": true,
+    "memory_store": true,
+    "memory_injection_txt": true,
+    "memory_injection_json": true,
+    "frontend_terminal": true,
+    "tts": true,
+    "whisper_transcribe": true,
+    "mood_engine": "initialized (random recall logic planned)",
+    "access_control": {
+      "admin": "full memory + voice",
+      "frontend_logged_in": "partial memory access",
+      "frontend_guest": "minimal access"
+    },
+    "memory_dashboard": {
+      "enabled": true,
+      "upload_ui": true,
+      "file_browser": true,
+      "auto_reload": true
+    }
+  },
+  "memory_paths": [
+    "context/context.log",
+    "injections/core/",
+    "injections/characters/",
+    "injections/universe/",
+    "injections/website/",
+    "injections/visuals/",
+    "user/",
+    "system/"
+  ],
+  "next_goals": [
+    "scroll unlock system",
+    "badge tracker",
+    "dynamic rank-based prompts",
+    "frontend search / prophecy panel"
+  ]
+}
