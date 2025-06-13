@@ -1,16 +1,21 @@
 <?php
 /*
 Plugin Name: DBS Memory Logger
-Description: Records memory actions.
-Version: 0.2
+Description: Records memory actions with viewable log and settings page.
+Version: 0.3
 */
 if (!defined('ABSPATH')) exit;
+
+require_once plugin_dir_path(__FILE__).'admin/dbs-memory-logger-admin.php';
 
 function dbs_memory_logger_activate(){
     $file = WP_CONTENT_DIR . '/dbs-library/system.json';
     if(!file_exists($file)){
         wp_mkdir_p(dirname($file));
         file_put_contents($file, json_encode([]));
+    }
+    if(false === get_option('dbs_memory_logger_enabled')){
+        add_option('dbs_memory_logger_enabled','1');
     }
 }
 register_activation_hook(__FILE__, 'dbs_memory_logger_activate');
@@ -26,30 +31,6 @@ function dbs_memory_logger($message) {
     file_put_contents($file, json_encode($data));
 }
 
-function dbs_memory_menu() {
-    add_menu_page('DBS Memory', 'DBS Memory', 'manage_options', 'dbs-memory', 'dbs_memory_page');
-    add_submenu_page('dbs-memory', 'Memory Log', 'Memory Log', 'manage_options', 'dbs-memory', 'dbs_memory_page');
-}
-add_action('admin_menu', 'dbs_memory_menu');
-
-function dbs_memory_page() {
-    echo '<div class="wrap"><h1>DBS Memory Log</h1>';
-    $screen = get_current_screen();
-    if($screen && method_exists($screen, 'add_help_tab')){
-        $screen->add_help_tab([
-            'id' => 'dbs_memory_help',
-            'title' => __('Usage'),
-            'content' => '<p>' . esc_html__('This page lists logged system messages.', 'dbs-memory-logger') . '</p>'
-        ]);
-    }
-    $file = WP_CONTENT_DIR . '/dbs-library/system.json';
-    $entries = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-    echo '<ul>';
-    foreach($entries as $e){
-        echo '<li>'.esc_html($e['time'].': '.$e['message']).'</li>';
-    }
-    echo '</ul></div>';
-}
 
 function dbs_memory_rest() {
     register_rest_route('dbs/v1', '/log', [
