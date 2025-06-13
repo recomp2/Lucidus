@@ -26,3 +26,4 @@ Twenty-fourth pass - executed safe validation runner twice per user request.
 Admin Fortifier: added memory hooks to admin pages
 Twenty-fifth pass - updated diagnostics admin page with settings
 Validation run successful x2 after diagnostics update
+Memory archive structure and logging refined; validation script ran twice.

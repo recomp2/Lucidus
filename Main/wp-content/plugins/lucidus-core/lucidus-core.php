@@ -10,7 +10,15 @@ function lucidus_core_activate(){
     $file = WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json';
     if(!file_exists($file)){
         wp_mkdir_p(dirname($file));
-        file_put_contents($file, json_encode([]));
+        $default = [
+            'prophecies'=>[],
+            'scrolls'=>[],
+            'badges'=>[],
+            'quests'=>[],
+            'behavior_tags'=>[],
+            'log'=>[]
+        ];
+        file_put_contents($file, json_encode($default));
     }
     if(!wp_next_scheduled('lucidus_feed_cron')){
         wp_schedule_event(time(), 'hourly', 'lucidus_feed_cron');
@@ -36,14 +44,19 @@ function lucidus_core_get_prophecies(){
     $file = WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json';
     if(!file_exists($file)) return [];
     $data = json_decode(file_get_contents($file), true);
-    return is_array($data) ? $data : [];
+    if(is_array($data) && isset($data['prophecies'])){
+        return $data['prophecies'];
+    }
+    return [];
 }
 
 // Utility to save a new prophecy
 function lucidus_core_save_prophecy($text){
-    $entries = lucidus_core_get_prophecies();
-    $entries[] = ['time'=>current_time('mysql'),'prophecy'=>$text];
-    file_put_contents(WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json', json_encode($entries));
+    $file = WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json';
+    $data = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    if(!isset($data['prophecies'])) $data['prophecies'] = [];
+    $data['prophecies'][] = ['time'=>current_time('mysql'),'prophecy'=>$text];
+    file_put_contents($file, json_encode($data));
     if(function_exists('dbs_memory_logger')){
         dbs_memory_logger('Prophecy saved: '.$text);
     }

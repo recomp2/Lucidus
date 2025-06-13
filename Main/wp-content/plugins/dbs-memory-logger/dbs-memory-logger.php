@@ -12,7 +12,15 @@ function dbs_memory_logger_activate(){
     $file = WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json';
     if(!file_exists($file)){
         wp_mkdir_p(dirname($file));
-        file_put_contents($file, json_encode([]));
+        $default = [
+            'prophecies'=>[],
+            'scrolls'=>[],
+            'badges'=>[],
+            'quests'=>[],
+            'behavior_tags'=>[],
+            'log'=>[]
+        ];
+        file_put_contents($file, json_encode($default));
     }
     if(false === get_option('dbs_memory_logger_enabled')){
         add_option('dbs_memory_logger_enabled','1');
@@ -45,7 +53,8 @@ function dbs_memory_logger($message) {
         rename($file, $file . '.' . time() . '.bak');
     }
     $data = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-    $data[] = ['time' => current_time('mysql'), 'message' => $message];
+    if(!isset($data['log'])) $data['log'] = [];
+    $data['log'][] = ['time' => current_time('mysql'), 'message' => $message];
     file_put_contents($file, json_encode($data));
 }
 
@@ -78,7 +87,9 @@ function dbs_memory_rest() {
         'methods' => 'GET',
         'callback' => function(){
             $file = WP_CONTENT_DIR . '/dbs-library/memory-archive/system.json';
-            return file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+            if(!file_exists($file)) return [];
+            $data = json_decode(file_get_contents($file), true);
+            return isset($data['log']) ? $data['log'] : [];
         },
         'permission_callback' => '__return_true'
     ]);
