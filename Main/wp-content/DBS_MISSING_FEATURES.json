@@ -1,0 +1,5 @@
+{
+  "missing_js": "Voice synthesis UI integration",
+  "notes": "Advanced initiation scripts need external daemons; User profile management remains minimal",
+  "security": "REST permissions need review"
+}
