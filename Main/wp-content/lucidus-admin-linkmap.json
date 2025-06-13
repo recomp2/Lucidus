@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "dbs-memory-logger",
+    "dbs-openai-key-manager",
+    "diagnostics",
+    "file-sync",
+    "initiation-tracker",
+    "lucidus-core",
+    "lucidus-panel",
+    "lucidus-society-core",
+    "lucidus-terminal-pro",
+    "lucidus-transcriber-whisper",
+    "lucidus-voice-proxy-stream",
+    "memory-live",
+    "mood-engine",
+    "phrase-forge",
+    "quest-engine",
+    "rank-engine"
+  ]
+}
