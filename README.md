@@ -41,3 +41,13 @@ This project is licensed under the MIT License.
 Dr.G and Lucidus Bastardo  
 _“Let the smoke speak.”_
 
+## 🗂️ AGENTS File Guidance
+
+Codex and other automated tools will look for an `AGENTS.md` file to load
+special instructions. The search always begins at the repository root. If
+present, root `AGENTS.md` rules apply to the entire project. Nested
+`AGENTS.md` files may further refine behavior for subdirectories, but they are
+only consulted after checking the root file. When developing new modules,
+place any agent directives in an `AGENTS.md` at the appropriate level so
+contributors and automation know how to proceed.
+
