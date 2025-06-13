@@ -8,3 +8,4 @@ Seventh pass - fixed validation script paths and improved safe runner.
 Eighth pass - added user rank management to rank engine and member mirror page displays user rank.
 Ninth pass - added placeholder validator scripts and documented AGENTS search.
 Tenth pass - added activation hooks and help tabs for key manager and panel plugins.
+Eleventh pass - added index files for plugins and expanded Lucidus Terminal Pro admin features.
